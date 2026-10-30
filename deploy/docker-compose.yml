@@ -1,7 +1,7 @@
 # /opt/compose/brandfnguide/docker-compose.yml
 # Test: testbrand.fnguide.com; production: brand.fnguide.com.
 # Static assets and IP policy are identical in both environments.
-# APP_TYPE=static, APP_PORT=3000, HEALTH_PATH=/api/health, BUILD_MODE=load.
+# APP_TYPE=static, APP_PORT=3000, HEALTH_PATH=/health, BUILD_MODE=load.
 # Server deployment HEALTH_PATH must match the healthcheck URLs below.
 # BLUE_VERSION and GREEN_VERSION come from the server deployment .env.
 networks:
@@ -28,7 +28,7 @@ services:
       - webnet
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "-q", "-T", "4", "-O", "/dev/null", "http://127.0.0.1:3000/api/health"]
+      test: ["CMD", "wget", "-q", "-T", "4", "-O", "/dev/null", "http://127.0.0.1:3000/health"]
       interval: 15s
       timeout: 5s
       retries: 3
@@ -58,7 +58,7 @@ services:
       - webnet
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "-q", "-T", "4", "-O", "/dev/null", "http://127.0.0.1:3000/api/health"]
+      test: ["CMD", "wget", "-q", "-T", "4", "-O", "/dev/null", "http://127.0.0.1:3000/health"]
       interval: 15s
       timeout: 5s
       retries: 3
