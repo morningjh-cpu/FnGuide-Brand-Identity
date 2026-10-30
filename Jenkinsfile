@@ -1,4 +1,4 @@
-// brand-fnguide-CI (internet-facing Jenkins)
+// brandfnguide-CI (internet-facing Jenkins)
 // SCM: https://igit.fnguide.com/design/brand-design-management.git
 // GitLab: Accepted Merge Request Events only, target ^(production|pre-production)$
 // Branch Specifier: ${gitlabTargetBranch}; Script Path: Jenkinsfile
@@ -11,7 +11,7 @@ pipeline {
     }
 
     environment {
-        APP_NAME   = 'brand-fnguide'
+        APP_NAME   = 'brandfnguide'
         BUILD_VER  = "${env.BUILD_NUMBER}"
         SFTP_DROP  = '/var/share/gitlab'
         NEXUS_URL  = 'http://10.200.40.128:8081'

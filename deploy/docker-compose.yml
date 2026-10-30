@@ -1,5 +1,5 @@
-# /opt/compose/brand-fnguide/docker-compose.yml
-# Test: pretest.fnguide.com; production: design.fnguide.com.
+# /opt/compose/brandfnguide/docker-compose.yml
+# Test: pretest.fnguide.com; production: brand.fnguide.com.
 # Static assets and IP policy are identical in both environments.
 # APP_TYPE=static, APP_PORT=3000, HEALTH_PATH=/health, BUILD_MODE=load.
 # BLUE_VERSION and GREEN_VERSION come from the server deployment .env.
@@ -8,9 +8,9 @@ networks:
     external: true
 
 services:
-  brand-fnguide-blue:
-    image: brand-fnguide:${BLUE_VERSION:-latest}
-    container_name: brand-fnguide-blue
+  brandfnguide-blue:
+    image: brandfnguide:${BLUE_VERSION:-latest}
+    container_name: brandfnguide-blue
     expose:
       - "3000"
     environment:
@@ -38,9 +38,9 @@ services:
         max-size: "10m"
         max-file: "5"
 
-  brand-fnguide-green:
-    image: brand-fnguide:${GREEN_VERSION:-latest}
-    container_name: brand-fnguide-green
+  brandfnguide-green:
+    image: brandfnguide:${GREEN_VERSION:-latest}
+    container_name: brandfnguide-green
     expose:
       - "3000"
     environment:
