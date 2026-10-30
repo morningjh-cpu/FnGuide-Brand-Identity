@@ -1,5 +1,5 @@
 # /opt/compose/brand-fnguide/docker-compose.yml
-# Test: testdesign.fnguide.com; production: design.fnguide.com.
+# Test: pretest.fnguide.com; production: design.fnguide.com.
 # Static assets and IP policy are identical in both environments.
 # APP_TYPE=static, APP_PORT=3000, HEALTH_PATH=/health, BUILD_MODE=load.
 # BLUE_VERSION and GREEN_VERSION come from the server deployment .env.
