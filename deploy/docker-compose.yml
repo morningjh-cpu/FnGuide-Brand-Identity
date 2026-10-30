@@ -1,0 +1,69 @@
+# /opt/compose/brand-fnguide/docker-compose.yml
+# Test: testdesign.fnguide.com; production: design.fnguide.com.
+# Static assets and IP policy are identical in both environments.
+# APP_TYPE=static, APP_PORT=3000, HEALTH_PATH=/health, BUILD_MODE=load.
+# BLUE_VERSION and GREEN_VERSION come from the server deployment .env.
+networks:
+  webnet:
+    external: true
+
+services:
+  brand-fnguide-blue:
+    image: brand-fnguide:${BLUE_VERSION:-latest}
+    container_name: brand-fnguide-blue
+    expose:
+      - "3000"
+    environment:
+      - TZ=Asia/Seoul
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    networks:
+      - webnet
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-T", "4", "-O", "/dev/null", "http://127.0.0.1:3000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  brand-fnguide-green:
+    image: brand-fnguide:${GREEN_VERSION:-latest}
+    container_name: brand-fnguide-green
+    expose:
+      - "3000"
+    environment:
+      - TZ=Asia/Seoul
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    networks:
+      - webnet
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-T", "4", "-O", "/dev/null", "http://127.0.0.1:3000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"

@@ -1,0 +1,35 @@
+# Allow only the files copied by Dockerfile.
+**
+!index.html
+!index_old.html
+!Apply skills Ver/
+!Apply skills Ver/**
+!out/
+out/**
+!out/brand-site/
+!out/brand-site/**
+!out/FnGuideLogotype-v*.zip
+!out/font-critique/
+out/font-critique/**
+!out/font-critique/img/
+!out/font-critique/img/**
+!out/font-critique/FnGuide-Logotype-v1.200-critique.html
+!out/font-critique/FnGuide-Logotype-v1.200-proposal.html
+!out/font-update/
+out/font-update/**
+!out/font-update/v1.200/
+out/font-update/v1.200/**
+!out/font-update/v1.200/fonts/
+out/font-update/v1.200/fonts/**
+!out/font-update/v1.200/fonts/FnGuideLogotype-Regular.woff
+!docker/
+docker/**
+!docker/nginx/
+docker/nginx/**
+!docker/nginx/default.conf
+
+# Keep secrets and machine-generated files excluded inside allowed directories.
+.env*
+**/.env*
+**/__pycache__/
+**/.DS_Store
