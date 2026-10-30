@@ -26,5 +26,5 @@ RUN printf 'version : %s\nenv     : %s\ncommit  : %s\n' "$BUILD_VERSION" "$DEPLO
 
 EXPOSE 3000
 HEALTHCHECK --interval=15s --timeout=5s --start-period=10s --retries=3 \
-    CMD wget -q -T 4 -O /dev/null http://127.0.0.1:3000/api/health || exit 1
+    CMD wget -q -T 4 -O /dev/null http://127.0.0.1:3000/health || exit 1
 CMD ["nginx", "-g", "daemon off;"]
