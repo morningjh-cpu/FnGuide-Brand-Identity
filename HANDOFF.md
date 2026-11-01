@@ -17,7 +17,7 @@
   - 한 번에 받기 ZIP <id>-web-icons/ 15개(icon.ico 는 넣지 않음 — 사용자 결정)
   - 심볼 4종(Retamin·DataGuide·CryptoGuide·WiseReport)은 data/Symbol → py scripts/build_symbols.py → out/brand-site/symbols.js(불러오기 ?v=6). WiseReport 는 사용자가 디자인한 일러스트레이터 파일(data/Symbol/wisereport/WR-White-modify.svg, 2026-10-30 11:26 수정본) — 도구가 클래스 색·한글 그러데이션 이름을 정리해 넣음. DataGuide 바탕은 FnRed #B9023D(피그마 #BF2645 대신, 결정 완료). 오픈 그래프 바탕도 시안의 #BF2645 대신 사이트 색
 - 사이트 파비콘(2026-10-29): FnGuide 개선 로고 Fn 아이콘(FnRed), out/brand-site/favicon/. 내 컴퓨터 파일로 열면 크롬이 탭 아이콘을 안 보여 줌(웹 주소로 열 때만 보임, 확인 완료)
-- 깃: origin = 깃허브(비공개), gitlab = 사내 깃랩 igit.fnguide.com/design/brand-design-management. `! git push` 한 번에 둘 다 올라감. 깃허브 무료 계정의 Pages 는 저장소가 비공개여도 공개라 사내 서체가 드러날 수 있음 — 깃랩 Pages(사내 회원만) 검토 제안했고 결정 안 됨
+- 깃: origin = 깃허브(비공개), gitlab = 사내 깃랩 igit.fnguide.com/design/brand-design-management. gitlab 연결은 **회사 PC에만** 있음(사내망 전용) — 회사 PC에선 `! git push` 한 번에 둘 다, 집 PC·노트북은 깃허브에만 올라감(정상). 깃허브 무료 계정의 Pages 는 저장소가 비공개여도 공개라 사내 서체가 드러날 수 있음 — 깃랩 Pages(사내 회원만) 검토 제안했고 결정 안 됨
 - 로고타입 다운로드 맨 아래 "전체 로고타입 받기 (ZIP)" 버튼(2026-10-29): 표의 로고 23종 × 컬러·흰색 × SVG·PNG(4배) = 90개 파일을 브라우저에서 바로 묶음(외부 라이브러리 없음, 개별 받기와 같은 여백·크기). 크롬에서 눌러 ZIP 정상 확인
 - 담당 부서 표기: "웹&모바일팀 디자인 파트"(사이트·공유 문서 모두, 2026-10-29)
 - 홈 바로가기 카드: 링크 문구는 카드 맨 아래 고정, 마우스를 올리면 움직이지 않고 약한 그림자. 본문 글자 링크는 마우스를 올리면 #B9023D
