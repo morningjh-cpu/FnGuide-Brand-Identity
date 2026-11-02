@@ -13,13 +13,13 @@
 
   // 그룹 정보 (기존 사이트와 같은 문구)
   const INFO = {
-    b2b: { menu: "B2B 대표상품", h1: 'B2B<span class="ko">대표상품</span>', mood: "열정, 자신감, 역동성, 현대적", ratio: 6.69,
+    b2b: { menu: "B2B 대표상품", h1: 'B2B<span class="ko">대표상품</span>', mood: "열정, 자신감, 역동성, 현대성", ratio: 6.69,
       desc: "대표 주력 상품으로 FnRed 2025 컬러를 단독으로 사용합니다.", extra: "Flagship 브랜드" },
     contract: { menu: "B2B 계약상품", h1: 'B2B<span class="ko">계약상품</span>', mood: "고객사 맞춤형 서비스", ratio: 16.45,
       desc: "고객사에 맞춰 제공하는 계약형 서비스 그룹입니다(고객사 전용 화면·웹 서비스)." },
-    fund: { menu: "펀드 상품", h1: 'Fund<span class="ko">상품</span>', mood: "신뢰, 정확성, 전문성", ratio: 12.17,
+    fund: { menu: "펀드상품", h1: 'Fund<span class="ko">상품</span>', mood: "신뢰, 정확성, 전문성", ratio: 12.17,
       desc: "FundGuide·FnSpectrum 같은 펀드·평가 서비스 그룹입니다." },
-    index: { menu: "지수 상품", h1: 'Index<span class="ko">상품</span>', mood: "성장, 투명성, 중립성", ratio: 2.49,
+    index: { menu: "지수상품", h1: 'Index<span class="ko">상품</span>', mood: "성장, 투명성, 중립성", ratio: 2.49,
       desc: "FnIndex·WiseIndex·CryptoGuide 같은 지수 서비스 그룹입니다.", extra: "지수 산출의 중립성과 투명한 처리과정", darkBg: true },
     b2c: { menu: "B2C 독립 체계", h1: 'B2C<span class="ko">독립 체계</span>', mood: "사용자 친화적, 서비스별 독립 컬러",
       desc: "개인 고객에게 특화된 서비스로, 사용자 트렌드에 맞게 독립적인 컬러와 서체를 씁니다." },
@@ -154,7 +154,7 @@
     { id: "contract", g: 3, bg: "#1C1C3A", logo: "etfglobal", v: "white", name: "B2B 계약상품", hex: "Contract #1C1C3A" },
     { id: "fund", g: 3, bg: "#0C3178", logo: "fundguide", v: "white", name: "펀드", hex: "Fund #0C3178" },
     { id: "index", g: 3, bg: "#45B792", logo: "fnindex", v: "white", name: "지수", hex: "Index #45B792" },
-    { id: "b2c", g: 4, bg: "#F4F2F1", logos: ["retamin", "wisereport", "fnapi"], name: "B2C 독립 체계", hex: "Retamin #1C1C3A · WiseReport #594FC8 · API #2457C5", light: true },
+    { id: "b2c", g: 4, bg: "#F4F2F1", logos: ["retamin", "wisereport", "fnapi"], name: "B2C 독립 체계", hex: "Retamin #1C1C3A · WiseReport #594FC8 · FnAPI #2457C5", light: true },
   ];
   const BAND_K = 0.78;
   $("#band").innerHTML = BAND.map(b => {
@@ -283,15 +283,15 @@
   }
   function renderGroup(id) {
     const g = G[id], i = INFO[id], items = logos.filter(l => l.group === id);
-    const color = id === "b2c" ? [["Retamin 주", "#1C1C3A"], ["Retamin 보조", "#26C0D2"], ["WiseReport", "#594FC8"], ["API", "#2457C5"]]
+    const color = id === "b2c" ? [["Retamin 주", "#1C1C3A"], ["Retamin 보조", "#26C0D2"], ["WiseReport", "#594FC8"], ["FnAPI", "#2457C5"]]
       : id === "ci" ? [["FnWine", "#94243A"], ["FnDarkGray", "#778288"]] : [[g.colorName, g.color]];
     let html = `<nav class="tabs" aria-label="로고타입 그룹">${logoTabs(id)}</nav>
       <div class="g-hero"><h1>${i.h1}</h1><p class="lead">${i.desc}</p>
         <dl><dt>컬러</dt><dd>${color.map(([n, c]) => `<span class="chip" style="background:${c}"></span>${n} ${c}`).join("<br>")}</dd>
         <dt>성격</dt><dd>${i.mood}</dd>${i.extra ? `<dt>의미</dt><dd>${i.extra}</dd>` : ""}
         ${i.ratio ? `<dt>흰 배경 대비</dt><dd>${i.ratio} — ${i.ratio >= 4.5 ? "작은 글자도 잘 보임(4.5 이상)" : "큰 글자·그래픽용(4.5 미만)"}</dd>` : ""}</dl></div>`;
-    if (id === "index") html += `<p class="alert"><b>흰 배경 비권장.</b> Index 컬러는 흰 배경에서 명도 대비가 낮아(2.49) 어두운 배경과 조합하세요.</p>`;
-    if (id === "b2c") html += `<p class="alert">리타민은 B2C 독립 체계에 따라 전용서체가 아닌 서비스 고유 로고를 씁니다(주 #1C1C3A, 보조 #26C0D2). 보조 색상은 흰 배경 대비가 낮아(2.20) 흰 배경 글자에는 권장하지 않습니다. WiseReport(#594FC8)와 FnAPI(#2457C5)는 전용서체 로고타입에 서비스별 독립 컬러를 씁니다.</p>`;
+    if (id === "index") html += `<p class="alert"><b>흰 배경 비권장.</b> Index 컬러는 흰 배경에서 명도 대비가 낮으므로(2.49) 어두운 배경과 조합하세요.</p>`;
+    if (id === "b2c") html += `<p class="alert">Retamin은 B2C 독립 체계에 따라 전용서체가 아닌 서비스 고유 로고를 씁니다(주 #1C1C3A, 보조 #26C0D2). 보조 색상은 흰 배경 대비가 낮아(2.20) 흰 배경 글자에는 권장하지 않습니다. WiseReport(#594FC8)와 FnAPI(#2457C5)는 전용서체 로고타입에 서비스별 독립 컬러를 씁니다.</p>`;
     if (id === "ci") {
       const ci = L["fnguide-ci"], improved = L.fnguide;
       const sys = [["FnWine", "#94243A", "Pantone 704 C", "148 / 36 / 58", "50 / 100 / 80 / 0"], ["FnDarkGray", "#778288", "Pantone 431 C", "119 / 130 / 136", "15 / 0 / 0 / 60"], ["FnLightGray", "#A8B0B6", "Pantone 429 C", "155 / 165 / 165", "5 / 0 / 0 / 35"]];
@@ -303,8 +303,8 @@
         </div>
         <div class="g-sec"><h2>개선된 브랜드 로고</h2><p class="sub">리뉴얼 후 FnRed 2025(#B9023D)를 쓰는 브랜드 로고입니다.</p><div class="rows">${row(improved, i)}</div>
           <div class="story"><div><span>이전</span><h3>2000년의 클래식 세리프</h3><p>회사의 역사를 담은 클래식 세리프 로고타입으로, 2000년에 만들었습니다.</p></div>
-            <div><span>개선</span><h3>볼륨 향상</h3><p>서체 고유의 유니크함을 유지하되, 시인성을 높이기 위해 전체 볼륨을 키웠습니다.</p></div>
-            <div><span>컬러</span><h3>Dark Wine에서 FnRed로</h3><p>더 밝고 선명한 빨강으로 바꿔, 화면에서 힘 있게 보이도록 했습니다.</p></div></div></div>
+            <div><span>개선</span><h3>볼륨 향상</h3><p>서체 고유의 개성은 유지하되, 시인성을 높이기 위해 전체 볼륨을 키웠습니다.</p></div>
+            <div><span>컬러</span><h3>FnWine에서 FnRed 2025로</h3><p>더 밝고 선명한 빨강으로 바꿔 화면에서 힘 있게 보이도록 했습니다.</p></div></div></div>
         <div class="g-sec"><h2>로고타입</h2><p class="sub">임의로 타이핑하거나 색을 바꾸거나 일부만 쓰는 등 변형할 수 없습니다.</p><div class="rows">${["fnguide-inc", "fnguide-kr"].map(k => row(L[k], i)).join("")}</div></div>
         <div class="g-sec"><h2>전용색상</h2><p class="sub">FnGuide의 두 가지 핵심 컬러는 FnWine과 FnDarkGray입니다.</p>
           <table class="ci-table"><thead><tr><th>컬러</th><th>HEX</th><th>Pantone</th><th>RGB</th><th>CMYK</th></tr></thead>
@@ -611,15 +611,15 @@
     ["지수", "Index", ["#45B792"], "2.49", false, "어두운 배경(#1C1C3A)과 조합"],
     ["펀드", "Fund", ["#0C3178"], "12.17", true, "흰 배경 / Fund 배경에 흰색 버전"],
     ["B2B 계약상품", "Contract", ["#1C1C3A"], "16.45", true, "흰 배경 / 어두운 배경에 흰색 버전"],
-    ["B2C · 리타민", "주", ["#1C1C3A"], "16.45", true, "흰 배경 / 주 색상 배경에 흰색 버전"],
-    ["B2C · 리타민", "보조", ["#26C0D2"], "2.20", false, "보조 색상은 흰 배경 글자에 쓰지 않음"],
+    ["B2C · Retamin", "주", ["#1C1C3A"], "16.45", true, "흰 배경 / 주 색상 배경에 흰색 버전"],
+    ["B2C · Retamin", "보조", ["#26C0D2"], "2.20", false, "보조 색상은 흰 배경 글자에 쓰지 않음"],
     ["B2C · WiseReport", "WiseReport", ["#594FC8"], "6.22", true, "흰 배경 / WiseReport 배경에 흰색 버전"],
-    ["B2C · API", "API", ["#2457C5"], "6.47", true, "흰 배경 / API 배경에 흰색 버전"],
+    ["B2C · FnAPI", "FnAPI", ["#2457C5"], "6.47", true, "흰 배경 / FnAPI 배경에 흰색 버전"],
   ];
   $("#pairs").innerHTML = `<ul class="pair-list">${PAIRS.map(([g, n, [c], r, ok, rec]) => `<li>
     <span class="pair-sw"><span style="background:${c}">Fn</span><span style="color:${c}">Fn</span></span>
     <span class="pair-name"><b>${g}</b><span>${n} ${c}</span></span>
-    <span class="pair-ratio ${ok ? "ok" : "warn"}"><b>${r}</b>${ok ? "본문까지 가능" : "흰 배경 비권장"}</span>
+    <span class="pair-ratio ${ok ? "ok" : "warn"}"><b>${r}</b>${ok ? "작은 글자도 가능" : "흰 배경 비권장"}</span>
     <span class="pair-rec">${rec}</span></li>`).join("")}</ul>`;
 
   document.addEventListener("click", e => { // 같은 화면 안의 회차로 부드럽게 이동

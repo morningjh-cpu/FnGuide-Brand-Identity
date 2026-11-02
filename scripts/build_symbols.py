@@ -19,8 +19,8 @@ ET.register_namespace("", NS)
 
 # 서비스 id: (원본 파일, 남길 그룹 id, 설명) — 피그마 "FnGuide Brand Symbol" 페이지
 KEEP = {
-    "retamin": ("retamin/retamin-icon-navy.svg", "img/retamin-app-icon", "Report 의 R — 네모·세모·원"),
-    "dataguide": ("dataguide/figma/dataguide-icon-256.svg", "Icon-set", "D·G 와 ∞ — 무한한 데이터 흐름"),
+    "retamin": ("retamin/retamin-icon-navy.svg", "img/retamin-app-icon", "Report의 R — 네모·세모·원"),
+    "dataguide": ("dataguide/figma/dataguide-icon-256.svg", "Icon-set", "D·G와 ∞ — 무한한 데이터 흐름"),
     "cryptoguide": ("cryptoguide/cryptoguide-icon-512.svg", "CryptoGuide", "Crypto·Guide 이니셜의 큐브"),
     # 일러스트레이터 내보내기(사용자 디자인 2026-10-30): 그룹 id 대신 None — 파일 전체를 쓴다
     "wisereport": ("wisereport/WR-White-modify.svg", None, "Wise·Report 이니셜 W·R"),
