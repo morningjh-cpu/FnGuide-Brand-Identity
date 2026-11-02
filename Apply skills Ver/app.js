@@ -172,7 +172,7 @@
 
   // ---------- 전용서체 ----------
   $("#fontFiles").innerHTML = [
-    ["OTF", "디자인 툴용 (Figma, Illustrator 등)"], ["TTF", "오피스용 (Word, PowerPoint)"], ["WOFF", "사내 웹 서비스용"],
+    ["OTF", "디자인 툴용 (Figma, Illustrator 등)"], ["TTF", "오피스용 (Word, PowerPoint)"], ["WOFF2", "사내 웹 서비스용 (작은 파일)"], ["WOFF", "사내 웹 서비스용"],
   ].map(([f, d]) => `<li><b>${f}</b><span>${d}</span><a class="btn primary" href="out/brand-site/fonts/FnGuideLogotype-Regular.${f.toLowerCase()}" download>${icon}${f} 받기</a></li>`).join("");
 
   const spec = $("#specText"), input = $("#specInput");

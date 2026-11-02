@@ -2,7 +2,8 @@
    방향: 이름을 기념비처럼(taste-skill name-as-monument). 브랜드 색·서체는 그대로. */
 @font-face {
   font-family: "FnGuide Logotype";
-  src: url("../out/brand-site/fonts/FnGuideLogotype-Regular.woff?v=1.31") format("woff");
+  src: url("../out/brand-site/fonts/FnGuideLogotype-Regular.woff2?v=1.32b") format("woff2"),
+       url("../out/brand-site/fonts/FnGuideLogotype-Regular.woff?v=1.32b") format("woff");
   font-display: block;
 }
 :root {

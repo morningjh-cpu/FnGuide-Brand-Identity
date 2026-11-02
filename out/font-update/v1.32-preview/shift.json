@@ -1,0 +1,23 @@
+{
+ "math_target": 299,
+ "shift": {
+  "plus": 55,
+  "minus": 46,
+  "plusminus": 24,
+  "equal": 46,
+  "less": 55,
+  "greater": 55,
+  "multiply": 46,
+  "asciitilde": 56,
+  "plus.tf": 55,
+  "minus.tf": 46,
+  "plusminus.tf": 24,
+  "hyphen": 26,
+  "endash": 26,
+  "periodcentered": 46,
+  "slash": 30,
+  "backslash": 30,
+  "at": 50
+ },
+ "won_top_x": 132
+}

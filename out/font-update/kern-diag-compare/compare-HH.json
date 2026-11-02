@@ -1,0 +1,1595 @@
+{
+ "HH_fn": 56,
+ "v131": {
+  "AT": {
+   "kern": -160,
+   "gap": 124
+  },
+  "AV": {
+   "kern": -180,
+   "gap": 144
+  },
+  "AW": {
+   "kern": -145,
+   "gap": 175
+  },
+  "AY": {
+   "kern": -180,
+   "gap": 144
+  },
+  "FA": {
+   "kern": -100,
+   "gap": 126
+  },
+  "LT": {
+   "kern": -180,
+   "gap": 154
+  },
+  "LV": {
+   "kern": -180,
+   "gap": 188
+  },
+  "LW": {
+   "kern": -180,
+   "gap": 108
+  },
+  "LY": {
+   "kern": -180,
+   "gap": 220
+  },
+  "PA": {
+   "kern": -125,
+   "gap": 135
+  },
+  "RT": {
+   "kern": -60,
+   "gap": 52
+  },
+  "RV": {
+   "kern": -105,
+   "gap": 94
+  },
+  "RW": {
+   "kern": -70,
+   "gap": 128
+  },
+  "RY": {
+   "kern": -130,
+   "gap": 68
+  },
+  "TA": {
+   "kern": -145,
+   "gap": 85
+  },
+  "VA": {
+   "kern": -135,
+   "gap": 86
+  },
+  "WA": {
+   "kern": -75,
+   "gap": 150
+  },
+  "YA": {
+   "kern": -145,
+   "gap": 74
+  }
+ },
+ "v132_inter": {
+  "AT": {
+   "kern": -210,
+   "gap": 74
+  },
+  "AV": {
+   "kern": -240,
+   "gap": 84
+  },
+  "AW": {
+   "kern": -255,
+   "gap": 65
+  },
+  "AY": {
+   "kern": -240,
+   "gap": 84
+  },
+  "FA": {
+   "kern": -180,
+   "gap": 46
+  },
+  "LT": {
+   "kern": -255,
+   "gap": 79
+  },
+  "LV": {
+   "kern": -285,
+   "gap": 82
+  },
+  "LW": {
+   "kern": -205,
+   "gap": 82
+  },
+  "LY": {
+   "kern": -305,
+   "gap": 96
+  },
+  "PA": {
+   "kern": -200,
+   "gap": 60
+  },
+  "RT": {
+   "kern": -5,
+   "gap": 106
+  },
+  "RV": {
+   "kern": -110,
+   "gap": 88
+  },
+  "RW": {
+   "kern": -115,
+   "gap": 84
+  },
+  "RY": {
+   "kern": -90,
+   "gap": 108
+  },
+  "TA": {
+   "kern": -155,
+   "gap": 75
+  },
+  "VA": {
+   "kern": -140,
+   "gap": 81
+  },
+  "WA": {
+   "kern": -160,
+   "gap": 66
+  },
+  "YA": {
+   "kern": -135,
+   "gap": 84
+  }
+ },
+ "v132_mean_gap": 80.2,
+ "v131_mean_gap": 125.3,
+ "refs": {
+  "Avenir Next Demi": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.0,
+     "kern": -230,
+     "gap": 54
+    },
+    "AV": {
+     "ratio": 1.5,
+     "kern": -240,
+     "gap": 84
+    },
+    "AW": {
+     "ratio": 1.25,
+     "kern": -250,
+     "gap": 70
+    },
+    "AY": {
+     "ratio": 1.18,
+     "kern": -255,
+     "gap": 68
+    },
+    "FA": {
+     "ratio": 0.81,
+     "kern": -180,
+     "gap": 46
+    },
+    "LT": {
+     "ratio": 0.9,
+     "kern": -285,
+     "gap": 49
+    },
+    "LV": {
+     "ratio": 1.15,
+     "kern": -300,
+     "gap": 68
+    },
+    "LW": {
+     "ratio": 0.89,
+     "kern": -235,
+     "gap": 52
+    },
+    "LY": {
+     "ratio": 1.08,
+     "kern": -340,
+     "gap": 60
+    },
+    "PA": {
+     "ratio": 1.05,
+     "kern": -200,
+     "gap": 60
+    },
+    "RT": {
+     "ratio": 0.37,
+     "kern": -80,
+     "gap": 32
+    },
+    "RV": {
+     "ratio": 0.55,
+     "kern": -165,
+     "gap": 34
+    },
+    "RW": {
+     "ratio": 0.64,
+     "kern": -160,
+     "gap": 38
+    },
+    "RY": {
+     "ratio": 0.73,
+     "kern": -155,
+     "gap": 44
+    },
+    "TA": {
+     "ratio": 1.0,
+     "kern": -175,
+     "gap": 55
+    },
+    "VA": {
+     "ratio": 1.52,
+     "kern": -135,
+     "gap": 86
+    },
+    "WA": {
+     "ratio": 1.25,
+     "kern": -155,
+     "gap": 70
+    },
+    "YA": {
+     "ratio": 1.17,
+     "kern": -155,
+     "gap": 64
+    }
+   },
+   "mean_gap": 57.4,
+   "HH": 154
+  },
+  "DIN Medium": {
+   "pairs": {
+    "AT": {
+     "ratio": 0.95,
+     "kern": -230,
+     "gap": 54
+    },
+    "AV": {
+     "ratio": 1.15,
+     "kern": -260,
+     "gap": 64
+    },
+    "AW": {
+     "ratio": 0.99,
+     "kern": -265,
+     "gap": 55
+    },
+    "AY": {
+     "ratio": 1.04,
+     "kern": -265,
+     "gap": 58
+    },
+    "FA": {
+     "ratio": 0.8,
+     "kern": -180,
+     "gap": 46
+    },
+    "LT": {
+     "ratio": 0.95,
+     "kern": -280,
+     "gap": 54
+    },
+    "LV": {
+     "ratio": 0.9,
+     "kern": -315,
+     "gap": 52
+    },
+    "LW": {
+     "ratio": 0.87,
+     "kern": -240,
+     "gap": 48
+    },
+    "LY": {
+     "ratio": 0.9,
+     "kern": -350,
+     "gap": 50
+    },
+    "PA": {
+     "ratio": 0.87,
+     "kern": -210,
+     "gap": 50
+    },
+    "RT": {
+     "ratio": 0.68,
+     "kern": -75,
+     "gap": 36
+    },
+    "RV": {
+     "ratio": 0.68,
+     "kern": -160,
+     "gap": 38
+    },
+    "RW": {
+     "ratio": 0.66,
+     "kern": -160,
+     "gap": 38
+    },
+    "RY": {
+     "ratio": 0.8,
+     "kern": -155,
+     "gap": 44
+    },
+    "TA": {
+     "ratio": 0.95,
+     "kern": -175,
+     "gap": 55
+    },
+    "VA": {
+     "ratio": 1.16,
+     "kern": -155,
+     "gap": 66
+    },
+    "WA": {
+     "ratio": 1.03,
+     "kern": -165,
+     "gap": 60
+    },
+    "YA": {
+     "ratio": 1.01,
+     "kern": -160,
+     "gap": 58
+    }
+   },
+   "mean_gap": 51.4,
+   "HH": 182
+  },
+  "Futura Medium": {
+   "pairs": {
+    "AT": {
+     "ratio": 0.74,
+     "kern": -245,
+     "gap": 40
+    },
+    "AV": {
+     "ratio": 1.38,
+     "kern": -245,
+     "gap": 78
+    },
+    "AW": {
+     "ratio": 1.42,
+     "kern": -240,
+     "gap": 80
+    },
+    "AY": {
+     "ratio": 1.05,
+     "kern": -265,
+     "gap": 58
+    },
+    "FA": {
+     "ratio": 1.17,
+     "kern": -160,
+     "gap": 66
+    },
+    "LT": {
+     "ratio": 1.1,
+     "kern": -270,
+     "gap": 64
+    },
+    "LV": {
+     "ratio": 1.48,
+     "kern": -285,
+     "gap": 82
+    },
+    "LW": {
+     "ratio": 1.51,
+     "kern": -200,
+     "gap": 88
+    },
+    "LY": {
+     "ratio": 1.49,
+     "kern": -315,
+     "gap": 86
+    },
+    "PA": {
+     "ratio": 1.12,
+     "kern": -195,
+     "gap": 65
+    },
+    "RT": {
+     "ratio": 0.67,
+     "kern": -75,
+     "gap": 36
+    },
+    "RV": {
+     "ratio": 0.96,
+     "kern": -145,
+     "gap": 54
+    },
+    "RW": {
+     "ratio": 0.91,
+     "kern": -145,
+     "gap": 54
+    },
+    "RY": {
+     "ratio": 0.97,
+     "kern": -145,
+     "gap": 54
+    },
+    "TA": {
+     "ratio": 0.75,
+     "kern": -190,
+     "gap": 40
+    },
+    "VA": {
+     "ratio": 1.53,
+     "kern": -135,
+     "gap": 86
+    },
+    "WA": {
+     "ratio": 1.42,
+     "kern": -145,
+     "gap": 80
+    },
+    "YA": {
+     "ratio": 1.05,
+     "kern": -160,
+     "gap": 58
+    }
+   },
+   "mean_gap": 64.9,
+   "HH": 118
+  },
+  "Rotis Semi Sans Bold": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.0,
+     "kern": -230,
+     "gap": 54
+    },
+    "AV": {
+     "ratio": 1.39,
+     "kern": -245,
+     "gap": 78
+    },
+    "AW": {
+     "ratio": 1.06,
+     "kern": -260,
+     "gap": 60
+    },
+    "AY": {
+     "ratio": 1.1,
+     "kern": -260,
+     "gap": 64
+    },
+    "FA": {
+     "ratio": 0.92,
+     "kern": -175,
+     "gap": 51
+    },
+    "LT": {
+     "ratio": 0.93,
+     "kern": -280,
+     "gap": 54
+    },
+    "LV": {
+     "ratio": 1.06,
+     "kern": -310,
+     "gap": 58
+    },
+    "LW": {
+     "ratio": 0.79,
+     "kern": -245,
+     "gap": 42
+    },
+    "LY": {
+     "ratio": 1.03,
+     "kern": -345,
+     "gap": 56
+    },
+    "PA": {
+     "ratio": 1.1,
+     "kern": -200,
+     "gap": 60
+    },
+    "RT": {
+     "ratio": 0.64,
+     "kern": -75,
+     "gap": 36
+    },
+    "RV": {
+     "ratio": 0.56,
+     "kern": -165,
+     "gap": 34
+    },
+    "RW": {
+     "ratio": 0.72,
+     "kern": -160,
+     "gap": 38
+    },
+    "RY": {
+     "ratio": 0.74,
+     "kern": -155,
+     "gap": 44
+    },
+    "TA": {
+     "ratio": 1.01,
+     "kern": -175,
+     "gap": 55
+    },
+    "VA": {
+     "ratio": 1.4,
+     "kern": -140,
+     "gap": 81
+    },
+    "WA": {
+     "ratio": 1.05,
+     "kern": -165,
+     "gap": 60
+    },
+    "YA": {
+     "ratio": 1.15,
+     "kern": -155,
+     "gap": 64
+    }
+   },
+   "mean_gap": 54.9,
+   "HH": 161
+  },
+  "Candara Bold": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.26,
+     "kern": -215,
+     "gap": 70
+    },
+    "AV": {
+     "ratio": 1.43,
+     "kern": -245,
+     "gap": 78
+    },
+    "AW": {
+     "ratio": 1.34,
+     "kern": -245,
+     "gap": 75
+    },
+    "AY": {
+     "ratio": 1.28,
+     "kern": -250,
+     "gap": 74
+    },
+    "FA": {
+     "ratio": 1.1,
+     "kern": -165,
+     "gap": 61
+    },
+    "LT": {
+     "ratio": 1.21,
+     "kern": -265,
+     "gap": 69
+    },
+    "LV": {
+     "ratio": 1.13,
+     "kern": -305,
+     "gap": 62
+    },
+    "LW": {
+     "ratio": 1.07,
+     "kern": -225,
+     "gap": 62
+    },
+    "LY": {
+     "ratio": 1.23,
+     "kern": -330,
+     "gap": 70
+    },
+    "PA": {
+     "ratio": 1.19,
+     "kern": -195,
+     "gap": 65
+    },
+    "RT": {
+     "ratio": 1.47,
+     "kern": -30,
+     "gap": 82
+    },
+    "RV": {
+     "ratio": 1.58,
+     "kern": -110,
+     "gap": 88
+    },
+    "RW": {
+     "ratio": 1.49,
+     "kern": -115,
+     "gap": 84
+    },
+    "RY": {
+     "ratio": 1.49,
+     "kern": -115,
+     "gap": 84
+    },
+    "TA": {
+     "ratio": 1.28,
+     "kern": -160,
+     "gap": 70
+    },
+    "VA": {
+     "ratio": 1.52,
+     "kern": -135,
+     "gap": 86
+    },
+    "WA": {
+     "ratio": 1.32,
+     "kern": -150,
+     "gap": 76
+    },
+    "YA": {
+     "ratio": 1.42,
+     "kern": -140,
+     "gap": 78
+    }
+   },
+   "mean_gap": 74.1,
+   "HH": 155
+  },
+  "Corbel Bold": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.2,
+     "kern": -215,
+     "gap": 70
+    },
+    "AV": {
+     "ratio": 1.44,
+     "kern": -240,
+     "gap": 84
+    },
+    "AW": {
+     "ratio": 1.22,
+     "kern": -250,
+     "gap": 70
+    },
+    "AY": {
+     "ratio": 1.37,
+     "kern": -245,
+     "gap": 78
+    },
+    "FA": {
+     "ratio": 0.96,
+     "kern": -170,
+     "gap": 56
+    },
+    "LT": {
+     "ratio": 0.88,
+     "kern": -285,
+     "gap": 49
+    },
+    "LV": {
+     "ratio": 1.04,
+     "kern": -310,
+     "gap": 58
+    },
+    "LW": {
+     "ratio": 1.0,
+     "kern": -230,
+     "gap": 58
+    },
+    "LY": {
+     "ratio": 1.02,
+     "kern": -345,
+     "gap": 56
+    },
+    "PA": {
+     "ratio": 1.01,
+     "kern": -205,
+     "gap": 55
+    },
+    "RT": {
+     "ratio": 1.63,
+     "kern": -20,
+     "gap": 92
+    },
+    "RV": {
+     "ratio": 1.45,
+     "kern": -115,
+     "gap": 84
+    },
+    "RW": {
+     "ratio": 1.31,
+     "kern": -125,
+     "gap": 74
+    },
+    "RY": {
+     "ratio": 1.83,
+     "kern": -95,
+     "gap": 104
+    },
+    "TA": {
+     "ratio": 1.2,
+     "kern": -160,
+     "gap": 70
+    },
+    "VA": {
+     "ratio": 1.44,
+     "kern": -140,
+     "gap": 81
+    },
+    "WA": {
+     "ratio": 1.22,
+     "kern": -155,
+     "gap": 70
+    },
+    "YA": {
+     "ratio": 1.37,
+     "kern": -140,
+     "gap": 78
+    }
+   },
+   "mean_gap": 71.5,
+   "HH": 168
+  },
+  "Segoe UI Semibold": {
+   "pairs": {
+    "AT": {
+     "ratio": 0.92,
+     "kern": -235,
+     "gap": 50
+    },
+    "AV": {
+     "ratio": 1.2,
+     "kern": -255,
+     "gap": 68
+    },
+    "AW": {
+     "ratio": 1.05,
+     "kern": -260,
+     "gap": 60
+    },
+    "AY": {
+     "ratio": 0.95,
+     "kern": -270,
+     "gap": 54
+    },
+    "FA": {
+     "ratio": 0.68,
+     "kern": -190,
+     "gap": 36
+    },
+    "LT": {
+     "ratio": 1.0,
+     "kern": -280,
+     "gap": 54
+    },
+    "LV": {
+     "ratio": 1.03,
+     "kern": -310,
+     "gap": 58
+    },
+    "LW": {
+     "ratio": 0.96,
+     "kern": -235,
+     "gap": 52
+    },
+    "LY": {
+     "ratio": 1.02,
+     "kern": -345,
+     "gap": 56
+    },
+    "PA": {
+     "ratio": 0.84,
+     "kern": -215,
+     "gap": 45
+    },
+    "RT": {
+     "ratio": 1.11,
+     "kern": -50,
+     "gap": 62
+    },
+    "RV": {
+     "ratio": 1.44,
+     "kern": -115,
+     "gap": 84
+    },
+    "RW": {
+     "ratio": 1.17,
+     "kern": -130,
+     "gap": 68
+    },
+    "RY": {
+     "ratio": 1.22,
+     "kern": -130,
+     "gap": 68
+    },
+    "TA": {
+     "ratio": 0.89,
+     "kern": -180,
+     "gap": 50
+    },
+    "VA": {
+     "ratio": 1.22,
+     "kern": -150,
+     "gap": 71
+    },
+    "WA": {
+     "ratio": 1.01,
+     "kern": -170,
+     "gap": 56
+    },
+    "YA": {
+     "ratio": 0.96,
+     "kern": -165,
+     "gap": 54
+    }
+   },
+   "mean_gap": 58.1,
+   "HH": 173
+  },
+  "Calibri Bold": {
+   "pairs": {
+    "AT": {
+     "ratio": 0.85,
+     "kern": -235,
+     "gap": 50
+    },
+    "AV": {
+     "ratio": 1.21,
+     "kern": -255,
+     "gap": 68
+    },
+    "AW": {
+     "ratio": 1.06,
+     "kern": -260,
+     "gap": 60
+    },
+    "AY": {
+     "ratio": 0.91,
+     "kern": -270,
+     "gap": 54
+    },
+    "FA": {
+     "ratio": 0.67,
+     "kern": -190,
+     "gap": 36
+    },
+    "LT": {
+     "ratio": 0.85,
+     "kern": -285,
+     "gap": 49
+    },
+    "LV": {
+     "ratio": 0.85,
+     "kern": -320,
+     "gap": 48
+    },
+    "LW": {
+     "ratio": 0.79,
+     "kern": -245,
+     "gap": 42
+    },
+    "LY": {
+     "ratio": 0.83,
+     "kern": -355,
+     "gap": 46
+    },
+    "PA": {
+     "ratio": 0.74,
+     "kern": -220,
+     "gap": 40
+    },
+    "RT": {
+     "ratio": 1.44,
+     "kern": -30,
+     "gap": 82
+    },
+    "RV": {
+     "ratio": 1.3,
+     "kern": -125,
+     "gap": 74
+    },
+    "RW": {
+     "ratio": 1.27,
+     "kern": -125,
+     "gap": 74
+    },
+    "RY": {
+     "ratio": 1.47,
+     "kern": -115,
+     "gap": 84
+    },
+    "TA": {
+     "ratio": 0.85,
+     "kern": -180,
+     "gap": 50
+    },
+    "VA": {
+     "ratio": 1.2,
+     "kern": -155,
+     "gap": 66
+    },
+    "WA": {
+     "ratio": 1.02,
+     "kern": -170,
+     "gap": 56
+    },
+    "YA": {
+     "ratio": 0.89,
+     "kern": -170,
+     "gap": 48
+    }
+   },
+   "mean_gap": 57.1,
+   "HH": 152
+  },
+  "Verdana Bold": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.4,
+     "kern": -205,
+     "gap": 80
+    },
+    "AV": {
+     "ratio": 1.55,
+     "kern": -235,
+     "gap": 88
+    },
+    "AW": {
+     "ratio": 1.29,
+     "kern": -245,
+     "gap": 75
+    },
+    "AY": {
+     "ratio": 1.56,
+     "kern": -235,
+     "gap": 88
+    },
+    "FA": {
+     "ratio": 1.02,
+     "kern": -170,
+     "gap": 56
+    },
+    "LT": {
+     "ratio": 1.44,
+     "kern": -255,
+     "gap": 79
+    },
+    "LV": {
+     "ratio": 1.32,
+     "kern": -295,
+     "gap": 72
+    },
+    "LW": {
+     "ratio": 1.13,
+     "kern": -225,
+     "gap": 62
+    },
+    "LY": {
+     "ratio": 1.6,
+     "kern": -310,
+     "gap": 90
+    },
+    "PA": {
+     "ratio": 1.21,
+     "kern": -190,
+     "gap": 70
+    },
+    "RT": {
+     "ratio": 1.29,
+     "kern": -40,
+     "gap": 72
+    },
+    "RV": {
+     "ratio": 1.44,
+     "kern": -115,
+     "gap": 84
+    },
+    "RW": {
+     "ratio": 1.18,
+     "kern": -130,
+     "gap": 68
+    },
+    "RY": {
+     "ratio": 1.45,
+     "kern": -115,
+     "gap": 84
+    },
+    "TA": {
+     "ratio": 1.4,
+     "kern": -150,
+     "gap": 80
+    },
+    "VA": {
+     "ratio": 1.55,
+     "kern": -135,
+     "gap": 86
+    },
+    "WA": {
+     "ratio": 1.29,
+     "kern": -155,
+     "gap": 70
+    },
+    "YA": {
+     "ratio": 1.54,
+     "kern": -130,
+     "gap": 88
+    }
+   },
+   "mean_gap": 77.3,
+   "HH": 179
+  },
+  "Tahoma Bold": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.41,
+     "kern": -205,
+     "gap": 80
+    },
+    "AV": {
+     "ratio": 1.57,
+     "kern": -235,
+     "gap": 88
+    },
+    "AW": {
+     "ratio": 1.3,
+     "kern": -245,
+     "gap": 75
+    },
+    "AY": {
+     "ratio": 1.62,
+     "kern": -230,
+     "gap": 94
+    },
+    "FA": {
+     "ratio": 0.97,
+     "kern": -170,
+     "gap": 56
+    },
+    "LT": {
+     "ratio": 1.51,
+     "kern": -250,
+     "gap": 84
+    },
+    "LV": {
+     "ratio": 1.37,
+     "kern": -290,
+     "gap": 78
+    },
+    "LW": {
+     "ratio": 1.17,
+     "kern": -220,
+     "gap": 68
+    },
+    "LY": {
+     "ratio": 1.71,
+     "kern": -305,
+     "gap": 96
+    },
+    "PA": {
+     "ratio": 1.19,
+     "kern": -195,
+     "gap": 65
+    },
+    "RT": {
+     "ratio": 1.3,
+     "kern": -40,
+     "gap": 72
+    },
+    "RV": {
+     "ratio": 1.47,
+     "kern": -115,
+     "gap": 84
+    },
+    "RW": {
+     "ratio": 1.19,
+     "kern": -130,
+     "gap": 68
+    },
+    "RY": {
+     "ratio": 1.51,
+     "kern": -115,
+     "gap": 84
+    },
+    "TA": {
+     "ratio": 1.41,
+     "kern": -150,
+     "gap": 80
+    },
+    "VA": {
+     "ratio": 1.57,
+     "kern": -130,
+     "gap": 91
+    },
+    "WA": {
+     "ratio": 1.3,
+     "kern": -150,
+     "gap": 76
+    },
+    "YA": {
+     "ratio": 1.59,
+     "kern": -130,
+     "gap": 88
+    }
+   },
+   "mean_gap": 79.3,
+   "HH": 145
+  },
+  "Trebuchet MS Bold": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.0,
+     "kern": -230,
+     "gap": 54
+    },
+    "AV": {
+     "ratio": 1.33,
+     "kern": -250,
+     "gap": 74
+    },
+    "AW": {
+     "ratio": 1.24,
+     "kern": -250,
+     "gap": 70
+    },
+    "AY": {
+     "ratio": 1.08,
+     "kern": -265,
+     "gap": 58
+    },
+    "FA": {
+     "ratio": 1.42,
+     "kern": -145,
+     "gap": 81
+    },
+    "LT": {
+     "ratio": 1.31,
+     "kern": -260,
+     "gap": 74
+    },
+    "LV": {
+     "ratio": 1.23,
+     "kern": -300,
+     "gap": 68
+    },
+    "LW": {
+     "ratio": 1.04,
+     "kern": -230,
+     "gap": 58
+    },
+    "LY": {
+     "ratio": 1.36,
+     "kern": -325,
+     "gap": 76
+    },
+    "PA": {
+     "ratio": 1.03,
+     "kern": -200,
+     "gap": 60
+    },
+    "RT": {
+     "ratio": 1.27,
+     "kern": -40,
+     "gap": 72
+    },
+    "RV": {
+     "ratio": 1.49,
+     "kern": -115,
+     "gap": 84
+    },
+    "RW": {
+     "ratio": 1.22,
+     "kern": -130,
+     "gap": 68
+    },
+    "RY": {
+     "ratio": 1.16,
+     "kern": -135,
+     "gap": 64
+    },
+    "TA": {
+     "ratio": 1.07,
+     "kern": -170,
+     "gap": 60
+    },
+    "VA": {
+     "ratio": 1.4,
+     "kern": -140,
+     "gap": 81
+    },
+    "WA": {
+     "ratio": 1.22,
+     "kern": -155,
+     "gap": 70
+    },
+    "YA": {
+     "ratio": 1.07,
+     "kern": -160,
+     "gap": 58
+    }
+   },
+   "mean_gap": 68.3,
+   "HH": 144
+  },
+  "Arial Bold": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.1,
+     "kern": -220,
+     "gap": 64
+    },
+    "AV": {
+     "ratio": 1.23,
+     "kern": -255,
+     "gap": 68
+    },
+    "AW": {
+     "ratio": 0.82,
+     "kern": -275,
+     "gap": 45
+    },
+    "AY": {
+     "ratio": 1.16,
+     "kern": -260,
+     "gap": 64
+    },
+    "FA": {
+     "ratio": 1.05,
+     "kern": -165,
+     "gap": 61
+    },
+    "LT": {
+     "ratio": 1.27,
+     "kern": -260,
+     "gap": 74
+    },
+    "LV": {
+     "ratio": 1.12,
+     "kern": -305,
+     "gap": 62
+    },
+    "LW": {
+     "ratio": 0.8,
+     "kern": -240,
+     "gap": 48
+    },
+    "LY": {
+     "ratio": 1.33,
+     "kern": -325,
+     "gap": 76
+    },
+    "PA": {
+     "ratio": 1.03,
+     "kern": -200,
+     "gap": 60
+    },
+    "RT": {
+     "ratio": 1.61,
+     "kern": -20,
+     "gap": 92
+    },
+    "RV": {
+     "ratio": 1.62,
+     "kern": -105,
+     "gap": 94
+    },
+    "RW": {
+     "ratio": 1.08,
+     "kern": -135,
+     "gap": 64
+    },
+    "RY": {
+     "ratio": 1.54,
+     "kern": -110,
+     "gap": 88
+    },
+    "TA": {
+     "ratio": 1.06,
+     "kern": -170,
+     "gap": 60
+    },
+    "VA": {
+     "ratio": 1.22,
+     "kern": -150,
+     "gap": 71
+    },
+    "WA": {
+     "ratio": 0.8,
+     "kern": -180,
+     "gap": 46
+    },
+    "YA": {
+     "ratio": 1.14,
+     "kern": -155,
+     "gap": 64
+    }
+   },
+   "mean_gap": 66.7,
+   "HH": 147
+  },
+  "SF Pro Display Semibold": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.23,
+     "kern": -215,
+     "gap": 70
+    },
+    "AV": {
+     "ratio": 1.5,
+     "kern": -240,
+     "gap": 84
+    },
+    "AW": {
+     "ratio": 1.28,
+     "kern": -250,
+     "gap": 70
+    },
+    "AY": {
+     "ratio": 1.46,
+     "kern": -240,
+     "gap": 84
+    },
+    "FA": {
+     "ratio": 1.0,
+     "kern": -170,
+     "gap": 56
+    },
+    "LT": {
+     "ratio": 1.34,
+     "kern": -260,
+     "gap": 74
+    },
+    "LV": {
+     "ratio": 1.54,
+     "kern": -280,
+     "gap": 88
+    },
+    "LW": {
+     "ratio": 1.25,
+     "kern": -215,
+     "gap": 72
+    },
+    "LY": {
+     "ratio": 1.47,
+     "kern": -320,
+     "gap": 80
+    },
+    "PA": {
+     "ratio": 1.08,
+     "kern": -200,
+     "gap": 60
+    },
+    "RT": {
+     "ratio": 2.06,
+     "kern": 5,
+     "gap": 116
+    },
+    "RV": {
+     "ratio": 1.73,
+     "kern": -100,
+     "gap": 98
+    },
+    "RW": {
+     "ratio": 1.57,
+     "kern": -110,
+     "gap": 88
+    },
+    "RY": {
+     "ratio": 2.02,
+     "kern": -85,
+     "gap": 114
+    },
+    "TA": {
+     "ratio": 1.23,
+     "kern": -160,
+     "gap": 70
+    },
+    "VA": {
+     "ratio": 1.51,
+     "kern": -135,
+     "gap": 86
+    },
+    "WA": {
+     "ratio": 1.28,
+     "kern": -155,
+     "gap": 70
+    },
+    "YA": {
+     "ratio": 1.46,
+     "kern": -135,
+     "gap": 84
+    }
+   },
+   "mean_gap": 81.3,
+   "HH": 123
+  },
+  "Georgia Bold": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.8,
+     "kern": -185,
+     "gap": 100
+    },
+    "AV": {
+     "ratio": 4.14,
+     "kern": -90,
+     "gap": 234
+    },
+    "AW": {
+     "ratio": 3.68,
+     "kern": -110,
+     "gap": 210
+    },
+    "AY": {
+     "ratio": 2.18,
+     "kern": -200,
+     "gap": 124
+    },
+    "FA": {
+     "ratio": 3.51,
+     "kern": -30,
+     "gap": 196
+    },
+    "LT": {
+     "ratio": 2.37,
+     "kern": -200,
+     "gap": 134
+    },
+    "LV": {
+     "ratio": 3.44,
+     "kern": -175,
+     "gap": 192
+    },
+    "LW": {
+     "ratio": 3.17,
+     "kern": -110,
+     "gap": 178
+    },
+    "LY": {
+     "ratio": 2.75,
+     "kern": -245,
+     "gap": 156
+    },
+    "PA": {
+     "ratio": 3.92,
+     "kern": -40,
+     "gap": 220
+    },
+    "RT": {
+     "ratio": 1.74,
+     "kern": -15,
+     "gap": 96
+    },
+    "RV": {
+     "ratio": 4.07,
+     "kern": 30,
+     "gap": 228
+    },
+    "RW": {
+     "ratio": 3.62,
+     "kern": 5,
+     "gap": 204
+    },
+    "RY": {
+     "ratio": 2.11,
+     "kern": -80,
+     "gap": 118
+    },
+    "TA": {
+     "ratio": 1.8,
+     "kern": -130,
+     "gap": 100
+    },
+    "VA": {
+     "ratio": 4.32,
+     "kern": 25,
+     "gap": 246
+    },
+    "WA": {
+     "ratio": 3.65,
+     "kern": -20,
+     "gap": 206
+    },
+    "YA": {
+     "ratio": 2.13,
+     "kern": -100,
+     "gap": 118
+    }
+   },
+   "mean_gap": 170.0,
+   "HH": 68
+  },
+  "Cambria Bold": {
+   "pairs": {
+    "AT": {
+     "ratio": 1.22,
+     "kern": -215,
+     "gap": 70
+    },
+    "AV": {
+     "ratio": 1.82,
+     "kern": -220,
+     "gap": 104
+    },
+    "AW": {
+     "ratio": 1.82,
+     "kern": -215,
+     "gap": 105
+    },
+    "AY": {
+     "ratio": 1.06,
+     "kern": -265,
+     "gap": 58
+    },
+    "FA": {
+     "ratio": 1.52,
+     "kern": -140,
+     "gap": 86
+    },
+    "LT": {
+     "ratio": 1.09,
+     "kern": -275,
+     "gap": 59
+    },
+    "LV": {
+     "ratio": 1.24,
+     "kern": -295,
+     "gap": 72
+    },
+    "LW": {
+     "ratio": 1.27,
+     "kern": -215,
+     "gap": 72
+    },
+    "LY": {
+     "ratio": 0.95,
+     "kern": -345,
+     "gap": 56
+    },
+    "PA": {
+     "ratio": 1.6,
+     "kern": -170,
+     "gap": 90
+    },
+    "RT": {
+     "ratio": 1.51,
+     "kern": -25,
+     "gap": 86
+    },
+    "RV": {
+     "ratio": 1.95,
+     "kern": -90,
+     "gap": 108
+    },
+    "RW": {
+     "ratio": 1.88,
+     "kern": -90,
+     "gap": 108
+    },
+    "RY": {
+     "ratio": 1.19,
+     "kern": -130,
+     "gap": 68
+    },
+    "TA": {
+     "ratio": 0.74,
+     "kern": -190,
+     "gap": 40
+    },
+    "VA": {
+     "ratio": 1.79,
+     "kern": -120,
+     "gap": 101
+    },
+    "WA": {
+     "ratio": 1.65,
+     "kern": -135,
+     "gap": 90
+    },
+    "YA": {
+     "ratio": 0.71,
+     "kern": -180,
+     "gap": 38
+    }
+   },
+   "mean_gap": 78.4,
+   "HH": 99
+  }
+ }
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>기호 수정안 미리보기</title>
+<style>
+  :root { --bg:#fff; --soft:#f5f6f7; --line:#e3e5e8; --ink:#17181a; --ink-2:#4a4f55; --ink-3:#80868d; --red:#B9023D;
+          --text:"Pretendard","Malgun Gothic",system-ui,sans-serif; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:var(--text); line-height:1.7; font-size:15.5px; }
+  .wrap { max-width:1080px; margin:0 auto; padding:48px 24px 80px; }
+  .kicker { color:var(--red); font-weight:700; font-size:13px; letter-spacing:.04em; }
+  h1 { font-size:30px; margin:6px 0 4px; }
+  h2 { font-size:20px; margin:48px 0 12px; padding-top:16px; border-top:2px solid var(--ink); }
+  .note { background:var(--soft); border-radius:10px; padding:12px 16px; color:var(--ink-2); font-size:14px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:10px 0; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { background:var(--soft); }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  figure { margin:14px 0; }
+  figure img { width:100%; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  figcaption { color:var(--ink-3); font-size:13px; }
+  @media (max-width:760px) { .wrap { padding:32px 16px 64px; } table { display:block; overflow-x:auto; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">PREVIEW · 2026-11-02</div>
+  <h1>v1.32 수정안 미리보기</h1>
+  <p class="note">그림으로만 만든 시안입니다. 서체 파일(v1.31)은 고치지 않았습니다. 빨간 글자가 바뀌는 글자이고, 파란 선은 대문자 높이의 절반입니다.</p>
+
+  <h2>1. 바꾸는 글자</h2>
+  <table>
+    <tr><th>무리</th><th>글자</th><th class="num">올리는 값</th><th>정한 방법</th></tr>
+    <tr><td>수학 기호 (B안)</td><td>+ &lt; &gt; ~</td><td class="num">55 · 55 · 55 · 56</td><td rowspan="3">+ 를 55 올린 가운데 높이 299(대문자의 0.43, Avenir 수준)에 모두 맞춤. 지금은 기호마다 가운데가 조금씩 달라서 올리는 값도 다름</td></tr>
+    <tr><td></td><td>= − ×</td><td class="num">46</td></tr>
+    <tr><td></td><td>±</td><td class="num">24</td></tr>
+    <tr><td>표 숫자용 (고정폭)</td><td>+ − ±</td><td class="num">55 · 46 · 24</td><td>위와 같음</td></tr>
+    <tr><td>가운뎃점</td><td>·</td><td class="num">46</td><td>수학 기호와 같은 높이 299 (지금 0.36, 해외 서체 가운데값 0.42)</td></tr>
+    <tr><td>하이픈 · en 대시</td><td>- –</td><td class="num">26</td><td>가운데 280(0.40). 해외 서체 0.35~0.43, 가운데값 0.39. 소문자 단어("e-mail")에서 뜨지 않게 수학 기호보다 조금 낮게 둠</td></tr>
+    <tr><td>빗금</td><td>/ \</td><td class="num">30</td><td>지금 0.45 → 0.50 (해외 서체 가운데값 0.50)</td></tr>
+    <tr><td>골뱅이</td><td>@</td><td class="num">50</td><td>지금 0.38 → 0.45 (해외 서체 0.35~0.50)</td></tr>
+    <tr><td>원화</td><td>₩</td><td class="num">—</td><td>왼쪽 위 세리프를 지우고, 왼쪽 굵은 획의 바깥선을 같은 기울기로 위까지 곧게 이음</td></tr>
+  </table>
+  <p class="note">그대로 두는 기호: # $ % &amp; 는 해외 서체보다 0.04 낮지만 숫자 높이(대문자의 0.94)에 맞춰져 있어 숫자 옆에서 어울립니다. ( ) [ ] { } | 는 해외 서체보다 오히려 높습니다. 글자 폭과 간격은 바뀌지 않고, 높이만 옮깁니다.</p>
+
+  <h2>파일 설정 (v1.32에 함께 넣음)</h2>
+  <table>
+    <tr><th>항목</th><th>지금 v1.31</th><th>v1.32</th></tr>
+    <tr><td>포함 허용 값 (fsType)</td><td>8 — 편집 가능 포함</td><td><b>2 — 포함 금지</b>. 파워포인트·워드에서 "파일에 글꼴 포함"으로 저장해도 이 서체는 들어가지 않습니다</td></tr>
+    <tr><td>사용 조건 (name 13)</td><td>비어 있음</td><td>한국어: 에프앤가이드 고유의 한글 글꼴까지 포함된 폰트가 완성되기 전까지 사내에서만 사용합니다.<br>영어: For FnGuide internal use only until the FnGuide typeface including its own Korean glyphs is completed.</td></tr>
+  </table>
+  <p class="note">서체가 없는 PC에서 그 파일을 열면 이 글자들은 다른 서체로 바뀌어 보입니다. 외부로 보내는 자료의 로고는 로고 그림 파일을 쓰세요.</p>
+
+  <h2>2. 지금과 수정안</h2>
+  <figure><img src="p1-before-after.png" alt="기호 수정 전후"><figcaption>무리마다 위가 지금 v1.31, 아래가 수정안</figcaption></figure>
+
+  <h2>3. 원화 ₩</h2>
+  <figure><img src="p2-won.png" alt="원화 기호 수정 전후"><figcaption>왼쪽 지금 · 가운데 수정안 · 오른쪽 참고용 W(세리프 있음)</figcaption></figure>
+  <p class="note">참고: 가로줄이 굵은 획 바깥으로 나온 길이가 왼쪽 175, 오른쪽 143으로 조금 다릅니다. 지금과 같은 값이고, 이번 수정안에서는 건드리지 않았습니다.</p>
+
+  <h2>4. 해외 서체와 비교</h2>
+  <figure><img src="p3-reference.png" alt="해외 서체 비교"><figcaption>위에서부터 수정안 · Avenir Next · Inter · 지금 v1.31. 대문자 높이를 똑같이 맞춤</figcaption></figure>
+  <h2>5. 대문자 대각선 쌍 간격 (Inter 비율)</h2>
+  <p class="note">Helvetica Neue 비율은 너무 촘촘해서 빼고(사용자 판단), Inter Medium 비율로 다시 맞췄습니다. 대상은 같은 18쌍입니다. 목표 간격 = 전용서체의 HH 간격(56) × (Inter의 그 쌍 간격 ÷ Inter의 HH 간격 149). 간격은 같은 높이에서 잰 가장 가까운 잉크 거리(대문자 700 기준)이고, 최소 30을 지켰습니다. 로고 이름에 쓰인 대문자 쌍은 들어 있지 않아 로고는 바뀌지 않습니다.</p>
+  <figure><img src="p4-kern-diag-inter.png" alt="대각선 쌍 비교"><figcaption>위에서부터 지금 · 수정안(Inter 비율) · Inter Medium</figcaption></figure>
+  <figure><img src="p5-kern-diag-inter.png" alt="대문자 단어 비교"><figcaption>대문자 단어로 본 모습</figcaption></figure>
+  <table>
+    <tr><th>쌍</th><th class="num">지금 보정</th><th class="num">수정안</th><th class="num">차이</th><th class="num">잉크 간격</th><th class="num">Inter 비율</th><th class="num">(참고) Helvetica안</th></tr>
+    <tr><td>AT</td><td class="num">-160</td><td class="num">-210</td><td class="num">-50</td><td class="num">124 → 74</td><td class="num">1.3</td><td class="num">-230</td></tr>
+    <tr><td>AV</td><td class="num">-180</td><td class="num">-240</td><td class="num">-60</td><td class="num">144 → 84</td><td class="num">1.47</td><td class="num">-260</td></tr>
+    <tr><td>AW</td><td class="num">-145</td><td class="num">-255</td><td class="num">-110</td><td class="num">175 → 65</td><td class="num">1.15</td><td class="num">-260</td></tr>
+    <tr><td>AY</td><td class="num">-180</td><td class="num">-240</td><td class="num">-60</td><td class="num">144 → 84</td><td class="num">1.49</td><td class="num">-255</td></tr>
+    <tr><td>FA</td><td class="num">-100</td><td class="num">-180</td><td class="num">-80</td><td class="num">126 → 46</td><td class="num">0.78</td><td class="num">-175</td></tr>
+    <tr><td>LT</td><td class="num">-180</td><td class="num">-255</td><td class="num">-75</td><td class="num">154 → 79</td><td class="num">1.38</td><td class="num">-275</td></tr>
+    <tr><td>LV</td><td class="num">-180</td><td class="num">-285</td><td class="num">-105</td><td class="num">188 → 82</td><td class="num">1.42</td><td class="num">-325</td></tr>
+    <tr><td>LW</td><td class="num">-180</td><td class="num">-205</td><td class="num">-25</td><td class="num">108 → 82</td><td class="num">1.43</td><td class="num">-240</td></tr>
+    <tr><td>LY</td><td class="num">-180</td><td class="num">-305</td><td class="num">-125</td><td class="num">220 → 96</td><td class="num">1.68</td><td class="num">-340</td></tr>
+    <tr><td>PA</td><td class="num">-125</td><td class="num">-200</td><td class="num">-75</td><td class="num">135 → 60</td><td class="num">1.02</td><td class="num">-215</td></tr>
+    <tr><td>RT</td><td class="num">-60</td><td class="num">-5</td><td class="num">+55</td><td class="num">52 → 106</td><td class="num">1.89</td><td class="num">-80</td></tr>
+    <tr><td>RV</td><td class="num">-105</td><td class="num">-110</td><td class="num">-5</td><td class="num">94 → 88</td><td class="num">1.59</td><td class="num">-165</td></tr>
+    <tr><td>RW</td><td class="num">-70</td><td class="num">-115</td><td class="num">-45</td><td class="num">128 → 84</td><td class="num">1.48</td><td class="num">-165</td></tr>
+    <tr><td>RY</td><td class="num">-130</td><td class="num">-90</td><td class="num">+40</td><td class="num">68 → 108</td><td class="num">1.9</td><td class="num">-165</td></tr>
+    <tr><td>TA</td><td class="num">-145</td><td class="num">-155</td><td class="num">-10</td><td class="num">85 → 75</td><td class="num">1.3</td><td class="num">-175</td></tr>
+    <tr><td>VA</td><td class="num">-135</td><td class="num">-140</td><td class="num">-5</td><td class="num">86 → 81</td><td class="num">1.44</td><td class="num">-155</td></tr>
+    <tr><td>WA</td><td class="num">-75</td><td class="num">-160</td><td class="num">-85</td><td class="num">150 → 66</td><td class="num">1.15</td><td class="num">-160</td></tr>
+    <tr><td>YA</td><td class="num">-145</td><td class="num">-135</td><td class="num">+10</td><td class="num">74 → 84</td><td class="num">1.47</td><td class="num">-150</td></tr>
+  </table>
+  <p class="note">15쌍은 붙고 3쌍(RT +55, RY +40, YA +10)은 벌어집니다. Inter는 R 다음 T·Y를 거의 조이지 않기 때문입니다. 가장 많이 붙는 쌍은 LY −125, AW −110, LV −105입니다(Helvetica안은 −160, −115, −145). 잉크 간격은 빈 공간의 넓이를 다 반영하지 못하는 어림 지표입니다.</p>
+  <h2>6. 보고서용 기호 8개 (새로 그림)</h2>
+  <p class="note">2차 크리틱 쟁점 D(개선 권장 ❺)를 반영한 시안입니다. 기존 글자 조각(% . – T M R)을 써서 서체 성격을 지켰습니다. 크기·위치는 Pretendard·Inter·Helvetica Neue 등에서 잰 비율을 참고했습니다. 위 1장의 기호 높이 수정안도 함께 적용한 상태입니다. 숫자·대문자·소문자 20자와 앞뒤로 붙여 봐도 닿는 곳이 없습니다.</p>
+  <figure><img src="n1-new-glyphs.png" alt="새 기호 확대"><figcaption>새 기호(빨강)와 숫자·대문자. 빨간 선 = 수학 기호 가운데 높이</figcaption></figure>
+  <figure><img src="n2-sentences.png" alt="새 기호 문장 예시"><figcaption>위: 지금(없는 글자는 Pretendard Medium으로 나옴, 회색) · 아래: 수정안(새 기호, 빨강)</figcaption></figure>
+  <table>
+    <tr><th>기호</th><th>만든 방법</th><th class="num">너비</th><th>위치</th></tr>
+    <tr><td>▲ ▼</td><td>꽉 찬 삼각형, 폭 520 · 높이 450</td><td class="num">640</td><td>가운데 = 수학 기호 높이(299)</td></tr>
+    <tr><td>°</td><td>고리 지름 300, 옆 두께 70 · 위아래 45 (전용서체처럼 굵기 차이)</td><td class="num">420</td><td>위끝 705 (O 넘침 높이)</td></tr>
+    <tr><td>‰</td><td>% + 오른쪽 아래 고리 하나 더</td><td class="num">1300</td><td>% 와 같음</td></tr>
+    <tr><td>…</td><td>마침표 3개, 마침표 너비 간격</td><td class="num">717</td><td>기준선</td></tr>
+    <tr><td>—</td><td>en 대시 두께(66)로 한 칸 길이</td><td class="num">1000</td><td>en 대시와 같은 높이(+26 올린 뒤)</td></tr>
+    <tr><td>™</td><td>T·M 0.42배 + 획 두께 보정</td><td class="num">771</td><td>위끝 700 (대문자 높이)</td></tr>
+    <tr><td>®</td><td>고리 지름 560(옆 50 · 위아래 38) 안에 R 0.40배 + 획 두께 보정</td><td class="num">660</td><td>위끝 710</td></tr>
+  </table>
+  <p class="note">Pretendard의 ▲ ▼ 는 대문자보다 크게(높이 1.06배) 그려져 있어, 숫자 옆에서 증감 표시로 쓰기 좋게 숫자보다 작게(높이 450, 숫자 655) 잡았습니다. 앞뒤 간격 보정(커닝)은 아직 넣지 않았습니다. v1.32를 만들 때 비슷한 글자(+ % 마침표)의 간격을 따릅니다.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+{
+ "changed_glyphs": [
+  "asciitilde",
+  "at",
+  "backslash",
+  "endash",
+  "equal",
+  "greater",
+  "hyphen",
+  "less",
+  "minus",
+  "minus.tf",
+  "multiply",
+  "periodcentered",
+  "plus",
+  "plus.tf",
+  "plusminus",
+  "plusminus.tf",
+  "slash",
+  "uni20A9"
+ ],
+ "unexpected_changed": [],
+ "missing_expected": [],
+ "width_changed": [],
+ "added": [
+  "uni25B2",
+  "uni25BC",
+  "degree",
+  "perthousand",
+  "ellipsis",
+  "emdash",
+  "trademark",
+  "registered"
+ ],
+ "kern_changed": {
+  "AT": [
+   -160,
+   -175
+  ],
+  "AV": [
+   -180,
+   -160
+  ],
+  "AW": [
+   -145,
+   -185
+  ],
+  "AY": [
+   -180,
+   -195
+  ],
+  "FA": [
+   -100,
+   -140
+  ],
+  "LT": [
+   -180,
+   -235
+  ],
+  "LV": [
+   -180,
+   -245
+  ],
+  "LW": [
+   -180,
+   -190
+  ],
+  "LY": [
+   -180,
+   -285
+  ],
+  "PA": [
+   -125,
+   -145
+  ],
+  "RT": [
+   -60,
+   -70
+  ],
+  "RV": [
+   -105,
+   -140
+  ],
+  "RW": [
+   -70,
+   -130
+  ],
+  "RY": [
+   -130,
+   -120
+  ],
+  "TA": [
+   -145,
+   -120
+  ],
+  "VA": [
+   -135,
+   -55
+  ],
+  "WA": [
+   -75,
+   -90
+  ],
+  "YA": [
+   -145,
+   -95
+  ]
+ },
+ "kern_unexpected": [],
+ "new_glyph_kern_pairs": 17,
+ "pairs_checked": 12544,
+ "touching": [],
+ "fsType": 2,
+ "version": "Version 1.32",
+ "license_en": "For FnGuide internal use only until the FnGuide typeface including its own Korean glyphs is completed.",
+ "license_ko": "에프앤가이드 고유의 한글 글꼴까지 포함된 폰트가 완성되기 전까지 사내에서만 사용합니다.",
+ "glyphs": 137,
+ "cmap": 113
+}

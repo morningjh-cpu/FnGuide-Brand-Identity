@@ -5,6 +5,11 @@ v1.200 서체(out/font-update/v1.200/fonts)의 글자·여백·커닝을 그대�
 글자 모양은 scripts/font_critique/after.py·symbols.py 에서 가져온다(보고서 그림과 같은 윤곽).
 실행: py scripts/build_v13.py  [--control : 아무것도 안 바꾸고 다시 만들어 v1.200 과 같은지 확인]
       py scripts/build_v13.py --v131 : v1.3 + 대문자–숫자 커닝(out/font-update/work/kern_uc_digit.json, font_critique/kern_ucdigit.py 가 계산)
+      py scripts/build_v13.py --v132 : v1.31 + 2차 크리틱 반영(plan/phase-2/06)
+        기호 높이(font_critique/crit2_preview.SHIFT) · ₩ 세리프 제거 · 새 기호 8개(crit2_symbols_new) ·
+        대문자 대각선 18쌍 Avenir Next Demi 비율(대문자 평균 간격 기준, out/font-update/kern-diag-compare/compare-mean.json) ·
+        포함 금지(fsType 2) · 사용 조건 문구 · woff2
+        (대각선 18쌍은 처음 Inter 비율로 냈다가 너무 촘촘하다는 검토 의견으로 Avenir 로 바꿈. 별도 버전을 두지 않고 v1.32 에 포함 — plan/phase-2/07)
 """
 import os, sys, re
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "font_critique"))
@@ -23,8 +28,9 @@ ROOT = os.path.join(os.path.dirname(__file__), "..")
 SRC = os.path.join(ROOT, "out/font-update/v1.200/fonts/FnGuideLogotype-Regular.otf")
 FEA = os.path.join(ROOT, "out/font-update/work/kerning.fea")
 CONTROL = "--control" in sys.argv
-V131 = "--v131" in sys.argv
-VERSION = "1.200" if CONTROL else ("1.31" if V131 else "1.3")
+V132 = "--v132" in sys.argv
+V131 = "--v131" in sys.argv or V132
+VERSION = "1.200" if CONTROL else ("1.32" if V132 else ("1.31" if V131 else "1.3"))
 OUTDIR = os.path.join(ROOT, "out/font-update", "control" if CONTROL else "v" + VERSION, "fonts")
 FAMILY, STYLE, PS = "FnGuide Logotype", "Regular", "FnGuideLogotype-Regular"
 
@@ -67,6 +73,21 @@ if not CONTROL:
         glyphs[nm + ".tf"] = ([(o, tuple((x + (TAB - a) / 2, y) for x, y in p)) for o, p in src_ops], TAB)
     for nm, (ops, a) in new.items():
         glyphs[nm] = (conv(ops), round(a))
+    if V132:
+        import crit2_preview as pv, crit2_symbols_new as sn
+        # ₩ 왼쪽 위 세리프 제거 (v1.31 윤곽에서 세리프 점만 바꾼 것)
+        glyphs["uni20A9"] = (conv(pv.REPLACE["uni20A9"]), glyphs["uni20A9"][1]); changed.add("uni20A9")
+        # 기호 높이: 수학 기호 B안·가운뎃점·하이픈·en 대시·/ \·@ (고정폭 + − ± 포함)
+        for g, dy in pv.SHIFT.items():
+            ops, a = glyphs[g]
+            glyphs[g] = ([(o, tuple((x, y + dy) for x, y in pts)) for o, pts in ops], a); changed.add(g)
+        # 새 기호 8개
+        NEWNAME = {"▲": ("uni25B2", 0x25B2), "▼": ("uni25BC", 0x25BC), "°": ("degree", 0x00B0),
+                   "‰": ("perthousand", 0x2030), "…": ("ellipsis", 0x2026), "—": ("emdash", 0x2014),
+                   "™": ("trademark", 0x2122), "®": ("registered", 0x00AE)}
+        for ch, (a, path) in sn.build().items():
+            nm, u = NEWNAME[ch]; r = RecordingPen(); path.draw(r)
+            glyphs[nm] = (r.value, a); cmap[u] = nm
     added = [g for g in glyphs if g not in order]
     order += added; changed |= set(added)
 
@@ -143,11 +164,34 @@ if not CONTROL:
         KUD = json.load(open(os.path.join(ROOT, "out/font-update/work/kern_uc_digit.json"), encoding="utf-8"))
         assert not any(re.search(r"\n\s*pos " + k + " ", fea) for k in KUD)
         extra += ["    # v1.31: 대문자–숫자"] + [f"    pos {k} {v};" for k, v in KUD.items()]
+    if V132:
+        # 대문자 대각선 18쌍: Avenir Next Demi 비율, 대문자 평균 간격 기준 (기존 개별 쌍 줄은 고치고, 없으면 더함)
+        KD = {p: r["kern"] for p, r in json.load(open(os.path.join(ROOT, "out/font-update/kern-diag-compare/compare-mean.json"),
+              encoding="utf-8"))["refs"]["Avenir Next Demi"]["pairs"].items()}
+        extra.append("    # v1.32: 대문자 대각선 쌍·새 기호")
+        for pr, kv in KD.items():
+            fea, n = re.subn(r"(\n\s*pos " + pr[0] + " " + pr[1] + r") -?\d+;", r"\g<1> " + str(kv) + ";", fea)
+            if n == 0: extra.append(f"    pos {pr[0]} {pr[1]} {kv};")
+            else: assert n == 1, pr
+        # 새 기호 간격 묶음: ‰ 는 % 와, … 는 마침표(오른쪽)와, — 는 대시와, ▲▼ 는 + 와 같은 묶음
+        for cls, add in (("@R_symbols", "perthousand ellipsis uni25B2 uni25BC"), ("@L_symbols", "perthousand uni25B2 uni25BC"),
+                         ("@R_dashes", "emdash"), ("@L_dashes", "emdash")):
+            fea, n = re.subn(r"(" + cls + r" = \[[^\]]*)\]", r"\1 " + add + "]", fea, count=1); assert n == 1, cls
+        for line in fea.splitlines():        # 마침표·% 의 개별 쌍도 복사
+            m = re.match(r"\s*pos (\S+) (period|percent) (-?\d+);", line)
+            if m: extra.append(f"    pos {m.group(1)} {'ellipsis' if m.group(2) == 'period' else 'perthousand'} {m.group(3)};")
+            m = re.match(r"\s*pos percent (\S+) (-?\d+);", line)
+            if m: extra.append(f"    pos perthousand {m.group(1)} {m.group(2)};")
+        i = fea.rindex("} kern;")
     fea = fea[:i] + "\n    # v1.3: 이어 쓰기 글자 f_t f_j\n" + "\n".join(extra) + "\n" + fea[i:]
     fea = fea.replace("    sub f i by f_i;", "    sub f i by f_i;\n    sub f t by f_t;\n    sub f j by f_j;")
     digits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "plus", "minus", "plusminus"]
     fea += "\n# ---- v1.3: 고정폭 숫자 (선택 기능, 표에서 켬) ----\nfeature tnum {\n" + \
            "".join(f"    sub {d} by {d}.tf;\n" for d in digits) + "} tnum;\n"
+
+if V132:   # 기록용: 실제로 넣은 간격·합자 규칙
+    os.makedirs(os.path.dirname(OUTDIR), exist_ok=True)
+    open(os.path.join(os.path.dirname(OUTDIR), "features.fea"), "w", encoding="utf-8").write(fea)
 
 def lsb(g):
     bp = BoundsPen(None)
@@ -172,11 +216,13 @@ def build(kind):
     fb.setupNameTable({"familyName": FAMILY, "styleName": STYLE, "uniqueFontIdentifier": f"{PS};{VERSION}",
                        "fullName": f"{FAMILY} {STYLE}", "psName": PS, "version": f"Version {VERSION}",
                        "copyright": "Copyright (c) 2026 FnGuide. All rights reserved.",
+                       **({"licenseDescription": {"en": "For FnGuide internal use only until the FnGuide typeface including its own Korean glyphs is completed.",
+                                                  "ko": "에프앤가이드 고유의 한글 글꼴까지 포함된 폰트가 완성되기 전까지 사내에서만 사용합니다."}} if V132 else {}),
                        "description": "Logotype font based on the FnGuide logo (A-Z, a-z, 0-9, ASCII punctuation"
-                                      + ("" if CONTROL else ", financial symbols, tabular figures (tnum)") + "; internal use)."})
+                                      + ("" if CONTROL else ", financial symbols, tabular figures (tnum)") + (", report symbols" if V132 else "") + "; internal use)."})
     win_asc, fs_sel = (850, 0) if CONTROL else (870, 0x40)          # ⑤ Windows 위쪽 높이 870, Regular 표시
     fb.setupOS2(sTypoAscender=800, sTypoDescender=-250, sTypoLineGap=0, usWinAscent=win_asc, usWinDescent=260,
-                sxHeight=498, sCapHeight=700, fsType=0x0008, achVendID="FNGD", fsSelection=fs_sel)
+                sxHeight=498, sCapHeight=700, fsType=(0x0002 if V132 else 0x0008), achVendID="FNGD", fsSelection=fs_sel)
     fb.setupPost()
     fb.font["head"].fontRevision = float(VERSION)
     addOpenTypeFeaturesFromString(fb.font, fea)
@@ -186,4 +232,6 @@ def build(kind):
 
 build("otf"); f = build("ttf")
 f.flavor = "woff"; f.save(os.path.join(OUTDIR, f"{PS}.woff"))
+if V132:
+    f.flavor = "woff2"; f.save(os.path.join(OUTDIR, f"{PS}.woff2"))
 print(VERSION, len(order), "글자 →", OUTDIR)

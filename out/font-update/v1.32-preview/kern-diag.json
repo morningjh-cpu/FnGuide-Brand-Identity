@@ -1,0 +1,169 @@
+{
+ "HH_fn": 56,
+ "HH_helv": 144,
+ "pairs": {
+  "AT": {
+   "kern_now": -160,
+   "gap_now": 124,
+   "gap_target": 52,
+   "kern_new": -230,
+   "delta": -70,
+   "gap_new": 54,
+   "ref_ratio": 0.93
+  },
+  "AV": {
+   "kern_now": -180,
+   "gap_now": 144,
+   "gap_target": 63,
+   "kern_new": -260,
+   "delta": -80,
+   "gap_new": 64,
+   "ref_ratio": 1.11
+  },
+  "AW": {
+   "kern_now": -145,
+   "gap_now": 175,
+   "gap_target": 62,
+   "kern_new": -260,
+   "delta": -115,
+   "gap_new": 60,
+   "ref_ratio": 1.1
+  },
+  "AY": {
+   "kern_now": -180,
+   "gap_now": 144,
+   "gap_target": 70,
+   "kern_new": -255,
+   "delta": -75,
+   "gap_new": 68,
+   "ref_ratio": 1.24
+  },
+  "FA": {
+   "kern_now": -100,
+   "gap_now": 126,
+   "gap_target": 50,
+   "kern_new": -175,
+   "delta": -75,
+   "gap_new": 51,
+   "ref_ratio": 0.88
+  },
+  "LT": {
+   "kern_now": -180,
+   "gap_now": 154,
+   "gap_target": 58,
+   "kern_new": -275,
+   "delta": -95,
+   "gap_new": 59,
+   "ref_ratio": 1.03
+  },
+  "LV": {
+   "kern_now": -180,
+   "gap_now": 188,
+   "gap_target": 44,
+   "kern_new": -325,
+   "delta": -145,
+   "gap_new": 42,
+   "ref_ratio": 0.78
+  },
+  "LW": {
+   "kern_now": -180,
+   "gap_now": 108,
+   "gap_target": 46,
+   "kern_new": -240,
+   "delta": -60,
+   "gap_new": 48,
+   "ref_ratio": 0.82
+  },
+  "LY": {
+   "kern_now": -180,
+   "gap_now": 220,
+   "gap_target": 62,
+   "kern_new": -340,
+   "delta": -160,
+   "gap_new": 60,
+   "ref_ratio": 1.1
+  },
+  "PA": {
+   "kern_now": -125,
+   "gap_now": 135,
+   "gap_target": 47,
+   "kern_new": -215,
+   "delta": -90,
+   "gap_new": 45,
+   "ref_ratio": 0.83
+  },
+  "RT": {
+   "kern_now": -60,
+   "gap_now": 52,
+   "gap_target": 30,
+   "kern_new": -80,
+   "delta": -20,
+   "gap_new": 32,
+   "ref_ratio": 0.41
+  },
+  "RV": {
+   "kern_now": -105,
+   "gap_now": 94,
+   "gap_target": 31,
+   "kern_new": -165,
+   "delta": -60,
+   "gap_new": 34,
+   "ref_ratio": 0.54
+  },
+  "RW": {
+   "kern_now": -70,
+   "gap_now": 128,
+   "gap_target": 31,
+   "kern_new": -165,
+   "delta": -95,
+   "gap_new": 34,
+   "ref_ratio": 0.56
+  },
+  "RY": {
+   "kern_now": -130,
+   "gap_now": 68,
+   "gap_target": 35,
+   "kern_new": -165,
+   "delta": -35,
+   "gap_new": 34,
+   "ref_ratio": 0.61
+  },
+  "TA": {
+   "kern_now": -145,
+   "gap_now": 85,
+   "gap_target": 53,
+   "kern_new": -175,
+   "delta": -30,
+   "gap_new": 55,
+   "ref_ratio": 0.94
+  },
+  "VA": {
+   "kern_now": -135,
+   "gap_now": 86,
+   "gap_target": 68,
+   "kern_new": -155,
+   "delta": -20,
+   "gap_new": 66,
+   "ref_ratio": 1.21
+  },
+  "WA": {
+   "kern_now": -75,
+   "gap_now": 150,
+   "gap_target": 66,
+   "kern_new": -160,
+   "delta": -85,
+   "gap_new": 66,
+   "ref_ratio": 1.17
+  },
+  "YA": {
+   "kern_now": -145,
+   "gap_now": 74,
+   "gap_target": 70,
+   "kern_new": -150,
+   "delta": -5,
+   "gap_new": 68,
+   "ref_ratio": 1.24
+  }
+ },
+ "ref": "Helvetica Neue Medium"
+}

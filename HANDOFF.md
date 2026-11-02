@@ -1,6 +1,21 @@
 # HANDOFF — 이 파일은 clear 전에 항상 최신으로 덮어쓴다 (이 줄 포함)
 
 ## 현재 상태
+- **전용서체 v1.32 완성·사이트 반영(2026-11-02)**: 2차 크리틱 반영 — 기호 높이(B안 등), ₩ 세리프 제거, 보고서용 기호 8개(▲▼°‰…—™®), 대문자 대각선 18쌍 Avenir Next Demi 비율(대문자 평균 간격 기준, 처음 Inter 판은 너무 촘촘해 교체 — 별도 버전 없이 v1.32 에 포함), fsType 2·사용 조건 문구, woff2. 만들기 py scripts/build_v13.py --v132, 확인 check_v132.py(12,544쌍 닿음 0, 바뀐 쌍은 대각선 18쌍뿐), 압축 out/FnGuideLogotype-v1.32.zip(v1.31 zip 은 font-backup), 로고 23종 변화 없음, 사이트·공유 문서 v1.32. 기록 plan/phase-2/06
+  - 대각선 간격 재검토(2026-11-02): v1.32 가 너무 붙는다는 의견 → 해외 15종 비교(out/font-update/kern-diag-compare/preview.html) → Avenir Next Demi 로 확정, v1.32 에 포함(v1.33 은 만들었다가 사용자 요청으로 합침, plan/phase-2/07)
+  - 서체를 또 고치면: build_v13.py 에 같은 방식으로 옵션 추가(v1.32 는 --v132). 사이트 불러오기 번호는 style.css·app.js·logos.js·font-data.js·서체 모두 ?v=1.32b
+- **디자이너 확인 항목 모두 완료(2026-11-02, 사용자)**: 로고 17종, f 이어 쓰기 8종, 1·l·₩·× 등 시안, data/FnGuide-Logotype-Font/README 의 검토 항목까지 전부 ✔. "디자이너 확인 필요/아직"을 다시 언급하지 말 것
+- **전용서체 v1.31 2차 디자인 크리틱 완료(2026-11-02)**: 타이포·CI/BI·PM급 브랜드 디자이너(웹 대신) + 사용자 의견(+ − = < > 기호가 낮음). 수정 필요 2(기호 30 올림 안 A·서체 파일 사용 조건 문구)·개선 권장 6·유지 5. 1차 수정 5건은 모두 해결 확인. 보고서 out/font-critique/FnGuide-Logotype-v1.31-critique.html, 그림 img/50~55, 수치 metrics-v1.31*.json, 도구 scripts/font_critique/crit2_*.py, 기록 plan/phase-2/05. 사이트 디자인 크리틱 화면에 2차 반영. 서체 파일은 그대로. lib.py 경로를 폴더 이름과 무관하게 고침
+  - 한글 짝 서체 결정(2026-11-02, 사용자): 사용 규칙 "영문·숫자·기호만 수록" 항목 문구 = "한글은 들어 있지 않습니다. 한글 로고타입 \"에프앤가이드\"는 로고 파일로만 제공합니다. 문장 속 한글이 빈칸으로 보이지 않도록 Pretendard Medium을 함께 씁니다."(맑은 고딕 Bold 문장은 사용자 요청으로 삭제)(이전의 "한글 지정 서체 없음" 결정을 바꿈). 성격: 한글 로고타입 "에프앤가이드" 6글자는 로고 문자로만 있고(서체에는 미포함) 한글 짝 서체 디자인 예정은 없어, 한글이 빈칸으로 보이지 않게 하는 임시 대처(사용자 설명)
+  - 기호 수정안 미리보기(2026-11-02): 사용자가 B안 선택 + 다른 낮은 기호·₩ 세리프 제거 요청 → out/font-update/v1.32-preview/preview.html (도구 crit2_preview.py, 값 shift.json). 사용자 확인 대기, 서체 파일은 그대로
+  - 사외 유출 관리 결정(2026-11-02): v1.32 에서 fsType 2(포함 금지) + name 13 사용 조건 "에프앤가이드 고유의 한글 글꼴까지 포함된 폰트가 완성되기 전까지 사내에서만 사용합니다."(영어 병기). plan/phase-2/05
+  - 대각선 쌍 간격 수정안(2026-11-02): Helvetica Neue 안은 너무 촘촘하다고 사용자가 뺌 → Inter Medium 비율 안. 18쌍, preview.html 5장·kern-diag-inter.json·py crit2_kern_diag.py "Inter Medium". 서체 파일 그대로
+  - 한글 대용 서체 굵기 SemiBold → Medium(2026-11-02, 사용자 결정). 크리틱 보고서·크리틱 화면의 SemiBold 추천은 당시 기록이라 그대로
+  - 없는 기호(▲ ▼ ° ‰ … — ™ ®)도 새로 만들기 전까지 Pretendard Medium 사용(2026-11-02, 사용자 결정) — 사용 규칙 같은 항목에 한 문장 추가
+  - 한글 대용 서체 비교 미리보기(2026-11-02): Source Han Serif(=Noto Serif KR) 4굵기 vs Pretendard Medium → out/font-critique/korean-pair/preview.html. 결정: 명조는 어울리지 않아 Pretendard Medium 유지(전용서체는 세리프지만 산세리프 느낌의 볼륨이라 명조와 안 맞음 — 사용자 판단)
+  - 보고서용 기호 8개 시안(2026-11-02, 사용자 확인 — 현재 상태 유지): ▲▼°‰…—™® → preview.html 6장, new-glyphs.json, crit2_symbols_new.py. 서체 파일 그대로, 사용 규칙 문구는 v1.32 반영 때 수정
+  - 사이트 글 AI 티 검사(2026-11-02): 연결어미 뒤 쉼표 13곳 삭제 반영(index.html). 기록 plan/phase-2/05
+  - 사용자 결정 대기: 기호 높이 안 A/B/그대로·하이픈 포함 여부 / 서체 사용 범위 / v1.32 제작 여부
 - **정식 사이트 교체(2026-10-30)**: 스킬 적용 리뉴얼판을 index.html 로 정함(사용자 결정). 모양·동작은 Apply skills Ver/(style.css·app.js), 서체·로고는 out/brand-site/ 그대로. 이전 사이트는 index_old.html(꼬리의 "이전 버전 보기" 링크). 화면 구조·주소(#font/update 등)는 이전과 같아서 아래의 "index.html 의 page-update 에 단락 추가" 같은 안내는 새 index.html 에 그대로 적용, 단 그룹 정보·받기 동작은 이제 Apply skills Ver/app.js 에 있음. 받기 13종 자동 확인, 전체 ZIP 은 이전과 크기 같음. 기록 plan/phase-2/01~04
   - 위쪽 바 오른쪽 단추 = "서체 다운로드 v1.31"(out/FnGuideLogotype-v1.31.zip, 2026-10-30 사용자 요청으로 로고 전체 받기 대신). 서체가 업데이트되면 index.html 의 이 단추 파일 이름·버전 글자도 바꿀 것
   - 이후 다듬기(2026-10-30): 하위 메뉴(탭) 스크롤해도 붙어 있음, 디자인 아티클 서비스 고르기 = 바의 단추 → 그룹 단추 + 같은 폭 로고 카드 판(검색 없음, 심볼 표시는 옅은 회색), icon.ico 에 512px 포함(8개 크기), 꼬리 큰 FnGuide 불투명도 10%
@@ -23,14 +38,14 @@
 - 2차 시안 완성: index.html(폴더 맨 위로 옮김, 그림·서체·logos.js 등은 out/brand-site/ 그대로) — 위쪽 메뉴(왼쪽 FnGuide Brand Identity, 오른쪽 회사소개·그룹웨어·FnGuide.com 새 창) + 왼쪽 메뉴 구조
   - 왼쪽 메뉴 순서(2026-10-29): CI/BI 디자인 운영 · 브랜드 전용서체 소개(하위 3) · 브랜드 로고타입 소개(하위: 6개 그룹 + 맨 아래 로고타입 다운로드) · 디자인 아티클 · 사용 규칙
   - CI/BI 디자인 운영(홈: 위 카드 3개 Typeface·Brand Logotype·Guidelines(Download 카드는 뺌), 브랜드 방향·사업별 컬러 체계·B2B/B2C·기대 효과·최근 업데이트) — 메뉴 숫자는 없앰
-  - 브랜드 전용서체 소개 — 하위 메뉴 3개(이 순서): 서체 소개(#font) · 폰트 업데이트(#font/update, 제목 Font Update, 2026-10-29 추가. 버전별 수정 전/후 + 버전 이력 표. 새 버전은 page-update 맨 위에 단락 추가 + 버전 이력 맨 위에 한 줄) · 디자인 크리틱(#font/critique, 제목 Design Critic, 2026-10-29 추가. 크리틱 이력 표 + 회차별 결과. 그림은 out/font-critique/img 를 불러옴. 새 회차는 index.html 의 page-critique 이력 표에 줄 추가 + 회차 단락 추가)
+  - 브랜드 전용서체 소개 — 하위 메뉴 3개(이 순서): 서체 소개(#font) · 폰트 업데이트(#font/update, 제목 Font Update, 2026-10-29 추가. 버전별 수정 전/후 + 버전 이력 표. 새 버전은 page-update 맨 위에 단락 추가 + 버전 이력 맨 위에 한 줄) · 디자인 크리틱(#font/critique, 제목 Design Critique, 2026-10-29 추가. 크리틱 이력 표 + 회차별 결과. 그림은 out/font-critique/img 를 불러옴. 새 회차는 index.html 의 page-critique 이력 표에 줄 추가 + 회차 단락 추가)
   - 서체 소개(왜·현재 버전 한 줄 링크·사양·품질 기준·미리보기·사용 방법·파일 받기). 미리보기 문구를 SVG·PNG로 받기 가능(font-data.js 의 글자 윤곽·간격으로 그림, 하르프버즈 조판과 5천여 문구 일치 확인)
   - 브랜드 로고타입 소개(하위: B2B 대표/지수/펀드/B2B 계약/B2C/회사 CI — 흰 배경+컬러 배경 흰색 판, 웹사이트 링크(서비스 이력 메모는 삭제), CI 화면에 로고타입 개선·이전 CI 2종 전시용)
   - 로고타입 다운로드(#download, 제목 Assets Download · 작은 글씨 Logotype · 로고 받기. 로고 컬러·흰색 SVG/PNG. 서체 파일은 전용서체 소개에만), 사용 규칙(원칙·배경 조합·협력사·매뉴얼 빈칸)
 - **사이트 콘텐츠 크리틱 완료(2026-10-29)**: 브랜드 전략가·카피라이터·UX 콘텐츠 3인, 수정 필요 6·개선 권장 18·유지 6, 문장 수정안(지금→수정안). 보고서 out/content-critique/brand-site-content-critique.html, 기록 plan/phase-1/15. 결정 필요 없는 수정안 45곳 반영 완료(plan/phase-1/15 반영 단락). 품질 수치 v1.3 으로 다시 잼(1,268 규칙·9,793쌍 충돌 0), 그 과정에서 CV·CW·CY 닿음 발견 → 서체 커닝 고침(plan/phase-1/14). 폰트 업데이트 화면은 ₩ 숨김·받기 항목 삭제. 결정 완료(2026-10-29): 헤더 안내문 유지(이후 사용자 요청으로 삭제), 연락처 넣지 않음, 한글 지정 서체 없음(규칙 04 문장 삭제), 메뉴 이름·기대 효과는 제외(현행 유지), 사양의 ₩ 유지
 - **전용서체 v1.31 완성·사이트 반영(2026-10-29)**: v1.3 + 대문자–숫자 커닝 519쌍(공통 −25 + 모양 보정, 해외 서체 중 Inter 만 같은 쌍을 조임). 서체 out/font-update/v1.31/fonts, 압축 out/FnGuideLogotype-v1.31.zip(v1.3 zip 은 font-backup), 만들기 py scripts/build_v13.py --v131, 값 계산 scripts/font_critique/kern_ucdigit.py. 규칙 1,787·충돌 검사 10,808쌍 0. 로고는 숫자가 없어 그대로. 불러오기 ?v=1.31. 기록 plan/phase-1/16
 - 사이트 이름 정리(2026-10-29): 홈 카드 Brand Logotype, 회사 CI → FnGuide CI, 로고타입 페이지 제목 전용서체(영문 60px + 한글 34px #778288), 상품군 → 상품, 다운로드 표 줄 높이 70px, 폰트 업데이트 그림은 같은 배율 SVG(scripts/font_critique/update_figs.py)
-- **전용서체 v1.3 완성·사이트 반영(2026-10-29)**: 크리틱 수정 필요 5건 + ⑥ 1 받침·l 꼬리 + ⑨ 금융 기호 5개·고정폭 숫자(tnum). 서체 out/font-update/v1.3/fonts, 압축 out/FnGuideLogotype-v1.3.zip(옛 v1.200 zip 은 out/font-backup/), 만드는 도구 py scripts/build_v13.py(v1.200 서체 + 개선안 윤곽, --control 로 v1.200 그대로 다시 만들어 비교 가능). 로고타입 17종도 v1.3 으로 다시 만듦(사용자 결정). 기록 plan/phase-1/14. 디자이너 확인은 아직
+- **전용서체 v1.3 완성·사이트 반영(2026-10-29)**: 크리틱 수정 필요 5건 + ⑥ 1 받침·l 꼬리 + ⑨ 금융 기호 5개·고정폭 숫자(tnum). 서체 out/font-update/v1.3/fonts, 압축 out/FnGuideLogotype-v1.3.zip(옛 v1.200 zip 은 out/font-backup/), 만드는 도구 py scripts/build_v13.py(v1.200 서체 + 개선안 윤곽, --control 로 v1.200 그대로 다시 만들어 비교 가능). 로고타입 17종도 v1.3 으로 다시 만듦(사용자 결정). 기록 plan/phase-1/14. 디자이너 확인 완료(사용자 확인 2026-11-02 — 다시 "확인 안 됨"으로 언급하지 말 것)
 - (이전) 사이트 v1.200 반영 기록: plan/phase-1/09. 옛 v1.100 서체·로고는 _trash/
 - 로고 만들기: py scripts/build_logotypes.py (fonttools·uharfbuzz 설치됨). 서체는 최신 out/font-update/v1.31/fonts 를 씀(v1.200·조정 전 서체는 out/font-update/v1.200, logo-font). 불러오기 번호 ?v=1.3 (logos.js 는 ?v=1.31w)
   - 펀드에 FnSpectrum·FnARES 추가(2026-10-27). 서비스 웹사이트 링크는 스크립트의 SERVICE_URL(서비스 18종 입력됨. FnARES 는 개발 서버(devares) 주소. 없는 것: MarketMonitor·FnAPI·회사 CI)
@@ -51,13 +66,13 @@
 ## 다음 할 일
 - 열린 제안(사용자 결정 안 됨): 오픈 그래프 문구가 가로선보다 넓을 때 선 폭 안에서 줄 바꿀지 / 문구가 크고 3줄 이상이면 아래로 잘릴 수 있음 / 다운로드 표 순서를 디자인 아티클처럼(개선 로고 먼저) / 깃랩 기본 README 를 프로젝트 소개로 / 깃허브 Pages 끄고 깃랩 Pages
 - 크리틱 개선 권장 ⑥(1·I·l 구분)·⑨(고정폭 숫자·금융 기호) 개선안 각 2개 제안(2026-10-29): plan/phase-1/12, 보고서 out/font-critique/FnGuide-Logotype-v1.200-proposal.html, 그림 out/font-critique/img/20~25, 도구 scripts/font_critique/drafts.py. ⑥ 은 안 A 결정 — 받침을 F 왼쪽 위 세리프를 뒤집어 좌우 대칭으로 붙인 형태로 수정, 받침 너비는 해외 서체 비율로 420(그림 28). 안 B(l 꼬리)도 시안 진행 — t 꼬리를 가져와 끝이 얇게(그림 31·32, tail_l.py), 1 과 l 모두 마지막 수정본으로 반영 결정(로고 CompanyGlobal·ETF Global 2종도 바뀜). 금융 기호: − 는 + 너비 기준 0.98, × 는 492 네모·획 94, ₩ 가로획 65(그림 26·27, one_base.py). ⑨ 은 안 B 결정 — 비례 숫자 유지 + 고정폭 선택 기능, 새 1 반영, 금융 기호 1순위(₩ 한 줄형 − ± × ·)만(그림 29·30, symbols.py). 시안 그림만, 서체 파일은 그대로
-- 개선안 보고서를 수정 전/후 형식으로 다시 씀(2026-10-29): 수정 필요 ①~⑤ + ⑥ 1 받침·l 꼬리 + ⑨ 안 B·금융 기호 5개만 실음. 그림 33~39, 도구 scripts/font_critique/after.py, 기록 plan/phase-1/13. 이전판은 _trash/. 서체 파일은 그대로 — 다음: 디자이너 확인, v1.300 제작 여부 결정
+- 개선안 보고서를 수정 전/후 형식으로 다시 씀(2026-10-29): 수정 필요 ①~⑤ + ⑥ 1 받침·l 꼬리 + ⑨ 안 B·금융 기호 5개만 실음. 그림 33~39, 도구 scripts/font_critique/after.py, 기록 plan/phase-1/13. 이전판은 _trash/. 서체 파일은 그대로 — 이후 v1.3 제작 완료
 - 전용서체 v1.200 디자인 크리틱 완료(2026-10-27): 기록 plan/phase-1/11, 보고서 out/font-critique/FnGuide-Logotype-v1.200-critique.html(그림 img/, 수치 metrics.json), 도구 scripts/font_critique/. 사용자 결정 대기: 수정 필요 5건(C·G 높이, v·w·x·y 높이, o·c·e 위 넘침, ft·fj 이어 쓰기, 파일 높이 값·Regular 표시)을 v1.300으로 반영할지 / 서체 사용 범위(로고·제목 전용 또는 본문·표까지) / 사용 규칙에 최소 크기·한글 짝 서체 넣을지
 - 전용서체 v1.200 완성(새 글자 f m M s S y r 반영 + I 기둥 -4% 시안 A 반영 + f 이어 쓰기 8종 다시 만듦): out/font-update/v1.200/ (fonts, preview, 만든 과정). 기록: plan/phase-1/07
 - r 까지 사이트 반영 완료(plan/phase-1/09 추가분). 불러오기 주소 ?v=1.200r
 - f·m·r 기둥 0.15(≈4%) 가늘게 조정 완료(plan/phase-1/08 추가분). 사이트 다운로드 파일·업데이트 글·규칙 수(1,203)·로고타입 모두 반영(plan/phase-1/09·10)
 - 공유 문서(전용서체 결과 공유) = out/FnGuide-Logotype-share.md · .html (v1.31). 서체·사이트가 바뀌면 이 문서도 함께 갱신(사용자 요청). data/ 의 v1.0 copy.md 는 받은 원본 그대로
 - 결정 대기 4건 정리 완료(plan/phase-1/10): 로고타입 조정본으로 다시 만듦, data/FnGuide-Logotype-Font 의 fonts·spacing 을 v1.200 으로 교체(source-svg 는 8_v1.200/ 추가; README·proof·preview·build 는 아직 v1.100 기준으로 섞여 있음; 옛 파일 _trash/data-font-v1.100/)
-- 남은 것: f 이어 쓰기 8종 확인 — 사용자가 2026-10-28 회사에서 직접 확인·정리 예정(보낼 글 out/font-update/f-이어쓰기-디자이너확인요청.md, 그림·파일 링크 포함)
+- f 이어 쓰기 8종 확인: ✔ 디자이너 확인 완료(2026-11-02) (보낸 글 out/font-update/f-이어쓰기-디자이너확인요청.md)
 - 서체를 또 고치면(v1.3 부터): scripts/build_v13.py 처럼 앞 버전 서체를 읽어 바꿀 글자만 바꿔 새 버전 폴더에 만들기 → zip·옛 zip 은 font-backup → out/brand-site/fonts 복사 → py scripts/build_logotypes.py(또는 --font-data) → index.html 의 ?v= 숫자 올리기(서체·logos.js·font-data.js)
 - 서체 다시 만드는 법: out/font-update/work 에서 sh run_all.sh (numpy·matplotlib·scipy·scikit-image 설치 필요). 새 글자 SVG 는 py scripts/font_prepare_update.py 로 정리해 all/ 에 넣음

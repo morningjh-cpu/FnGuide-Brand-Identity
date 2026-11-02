@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대각선 간격 비교</title>
+<style>
+  :root { --bg:#fff; --soft:#f5f6f7; --line:#e3e5e8; --ink:#17181a; --ink-2:#4a4f55; --ink-3:#80868d; --red:#B9023D;
+          --text:"Pretendard","Malgun Gothic",system-ui,sans-serif; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:var(--text); line-height:1.7; font-size:15.5px; }
+  .wrap { max-width:1180px; margin:0 auto; padding:48px 24px 80px; }
+  .kicker { color:var(--red); font-weight:700; font-size:13px; letter-spacing:.04em; }
+  h1 { font-size:30px; margin:6px 0 4px; }
+  h2 { font-size:20px; margin:44px 0 12px; padding-top:16px; border-top:2px solid var(--ink); }
+  .note { background:var(--soft); border-radius:10px; padding:12px 16px; color:var(--ink-2); font-size:14px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:10px 0; }
+  th, td { text-align:left; padding:7px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { background:var(--soft); }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  figure { margin:14px 0; }
+  figure img { width:100%; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  figcaption { color:var(--ink-3); font-size:13px; }
+  .scroll { overflow-x:auto; }
+  @media (max-width:760px) { .wrap { padding:32px 16px 64px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">PREVIEW · 2026-11-02</div>
+  <h1>대문자 대각선 간격: 해외 서체 비교</h1>
+  <p class="note">Helvetica Neue·Inter는 빼고, 이 컴퓨터에 있는 해외 서체 15종으로 다시 계산했습니다. 대상은 v1.32와 같은 18쌍입니다. 서체 파일은 고치지 않았고, 아래는 그림 시안입니다.</p>
+
+  <h2>1. 먼저 알게 된 것: 기준을 바꿔야 여유가 생깁니다</h2>
+  <p>v1.32는 "각 쌍의 간격이 HH 간격의 몇 배인가"를 Inter와 똑같게 맞췄습니다. 그런데 전용서체는 로고 리듬에 맞춰 대문자끼리를 조여 두어 HH 간격이 유난히 좁습니다(56, Inter 149). 그래서 이 방식으로는 대각선 쌍도 함께 촘촘해집니다. 같은 방식으로 15종을 계산하면 Inter보다 넓어지는 서체는 Georgia·SF Pro뿐입니다(표의 "HH 기준" 열).</p>
+  <p>그래서 기준을 <b>"대문자 평균 간격"</b>으로 바꿨습니다. HH·HO·OH·OO 네 쌍의 평균이고, 둥근 글자 옆 간격까지 반영합니다(전용서체 84). 이렇게 하면 서체마다 v1.32보다 여유 있는 값이 나옵니다.</p>
+
+  <h2>2. 서체별 평균 간격 (18쌍, 대문자 700 기준)</h2>
+  <table>
+    <tr><th>서체 비율</th><th class="num">평균 간격 (평균 기준)</th><th class="num">(참고) HH 기준</th><th>비고</th></tr>
+    <tr><td><b>v1.32 지금 (Inter 비율)</b></td><td class="num">80.2</td><td class="num"></td><td></td></tr>
+    <tr><td>Cambria Bold</td><td class="num">88.3</td><td class="num">78.4</td><td>미리보기</td></tr>
+    <tr><td>DIN Medium</td><td class="num">89.9</td><td class="num">51.4</td><td>미리보기</td></tr>
+    <tr><td>Rotis Semi Sans Bold</td><td class="num">104.7</td><td class="num">54.9</td><td>미리보기</td></tr>
+    <tr><td>Avenir Next Demi</td><td class="num">108.6</td><td class="num">57.4</td><td>미리보기</td></tr>
+    <tr><td>Calibri Bold</td><td class="num">108.7</td><td class="num">57.1</td><td>미리보기</td></tr>
+    <tr><td>Segoe UI Semibold</td><td class="num">118.0</td><td class="num">58.1</td><td>미리보기</td></tr>
+    <tr><td><b>v1.31 (원래)</b></td><td class="num">125.3</td><td class="num"></td><td></td></tr>
+    <tr><td>Arial Bold</td><td class="num">126.7</td><td class="num">66.7</td><td>v1.31보다 넓음</td></tr>
+    <tr><td>Corbel Bold</td><td class="num">130.5</td><td class="num">71.5</td><td>v1.31보다 넓음</td></tr>
+    <tr><td>Trebuchet MS Bold</td><td class="num">134.7</td><td class="num">68.3</td><td>v1.31보다 넓음</td></tr>
+    <tr><td>Candara Bold</td><td class="num">138.3</td><td class="num">74.1</td><td>v1.31보다 넓음</td></tr>
+    <tr><td>Georgia Bold</td><td class="num">144.2</td><td class="num">170.0</td><td>v1.31보다 넓음</td></tr>
+    <tr><td>Futura Medium</td><td class="num">148.8</td><td class="num">64.9</td><td>v1.31보다 넓음</td></tr>
+    <tr><td>Verdana Bold</td><td class="num">149.7</td><td class="num">77.3</td><td>v1.31보다 넓음</td></tr>
+    <tr><td>SF Pro Display Semibold</td><td class="num">151.9</td><td class="num">81.3</td><td>v1.31보다 넓음</td></tr>
+    <tr><td>Tahoma Bold</td><td class="num">164.6</td><td class="num">79.3</td><td>v1.31보다 넓음</td></tr>
+  </table>
+  <p class="note">값이 클수록 여유 있습니다. v1.32(80)보다 넓고 v1.31(125)보다 좁은 6종을 아래에 미리보기로 그렸습니다. Rotis Semi Sans는 회사 CI 서체의 바탕이 된 계열이라 성격이 가장 가깝습니다.</p>
+
+  <h2>3. 미리보기</h2>
+  <figure><img src="compare-words.png" alt="대문자 단어 비교"><figcaption>왼쪽: 전용서체에 각 서체 비율을 적용한 모습 · 오른쪽: 그 서체의 원래 모습(같은 대문자 높이)</figcaption></figure>
+  <figure><img src="compare-pairs.png" alt="대각선 쌍 비교"><figcaption>대각선 쌍만 H 사이에 넣어 본 모습</figcaption></figure>
+
+  <h2>4. 쌍별 보정값</h2>
+  <div class="scroll"><table>
+    <tr><th>쌍</th><th class="num">v1.31</th><th class="num">v1.32 지금</th><th class="num">Cambria</th><th class="num">DIN</th><th class="num">Rotis</th><th class="num">Avenir</th><th class="num">Calibri</th><th class="num">Segoe</th></tr>
+    <tr><td>AT</td><td class="num">-160</td><td class="num">-210</td><td class="num">-205</td><td class="num">-190</td><td class="num">-175</td><td class="num">-175</td><td class="num">-195</td><td class="num">-180</td></tr>
+    <tr><td>AV</td><td class="num">-180</td><td class="num">-240</td><td class="num">-205</td><td class="num">-210</td><td class="num">-175</td><td class="num">-160</td><td class="num">-195</td><td class="num">-185</td></tr>
+    <tr><td>AW</td><td class="num">-145</td><td class="num">-255</td><td class="num">-205</td><td class="num">-220</td><td class="num">-205</td><td class="num">-185</td><td class="num">-205</td><td class="num">-200</td></tr>
+    <tr><td>AY</td><td class="num">-180</td><td class="num">-240</td><td class="num">-255</td><td class="num">-220</td><td class="num">-205</td><td class="num">-195</td><td class="num">-225</td><td class="num">-215</td></tr>
+    <tr><td>FA</td><td class="num">-100</td><td class="num">-180</td><td class="num">-130</td><td class="num">-150</td><td class="num">-130</td><td class="num">-140</td><td class="num">-155</td><td class="num">-150</td></tr>
+    <tr><td>LT</td><td class="num">-180</td><td class="num">-255</td><td class="num">-265</td><td class="num">-240</td><td class="num">-235</td><td class="num">-235</td><td class="num">-245</td><td class="num">-220</td></tr>
+    <tr><td>LV</td><td class="num">-180</td><td class="num">-285</td><td class="num">-290</td><td class="num">-280</td><td class="num">-255</td><td class="num">-245</td><td class="num">-275</td><td class="num">-250</td></tr>
+    <tr><td>LW</td><td class="num">-180</td><td class="num">-205</td><td class="num">-205</td><td class="num">-200</td><td class="num">-205</td><td class="num">-190</td><td class="num">-200</td><td class="num">-180</td></tr>
+    <tr><td>LY</td><td class="num">-180</td><td class="num">-305</td><td class="num">-340</td><td class="num">-310</td><td class="num">-290</td><td class="num">-285</td><td class="num">-310</td><td class="num">-285</td></tr>
+    <tr><td>PA</td><td class="num">-125</td><td class="num">-200</td><td class="num">-160</td><td class="num">-175</td><td class="num">-140</td><td class="num">-145</td><td class="num">-180</td><td class="num">-165</td></tr>
+    <tr><td>RT</td><td class="num">-60</td><td class="num">-5</td><td class="num">-15</td><td class="num">-45</td><td class="num">-45</td><td class="num">-70</td><td class="num">45</td><td class="num">15</td></tr>
+    <tr><td>RV</td><td class="num">-105</td><td class="num">-110</td><td class="num">-75</td><td class="num">-130</td><td class="num">-140</td><td class="num">-140</td><td class="num">-60</td><td class="num">-35</td></tr>
+    <tr><td>RW</td><td class="num">-70</td><td class="num">-115</td><td class="num">-80</td><td class="num">-135</td><td class="num">-120</td><td class="num">-130</td><td class="num">-60</td><td class="num">-65</td></tr>
+    <tr><td>RY</td><td class="num">-130</td><td class="num">-90</td><td class="num">-125</td><td class="num">-120</td><td class="num">-120</td><td class="num">-120</td><td class="num">-40</td><td class="num">-60</td></tr>
+    <tr><td>TA</td><td class="num">-145</td><td class="num">-155</td><td class="num">-185</td><td class="num">-135</td><td class="num">-120</td><td class="num">-120</td><td class="num">-140</td><td class="num">-130</td></tr>
+    <tr><td>VA</td><td class="num">-135</td><td class="num">-140</td><td class="num">-105</td><td class="num">-105</td><td class="num">-70</td><td class="num">-55</td><td class="num">-90</td><td class="num">-80</td></tr>
+    <tr><td>WA</td><td class="num">-75</td><td class="num">-160</td><td class="num">-120</td><td class="num">-125</td><td class="num">-115</td><td class="num">-90</td><td class="num">-115</td><td class="num">-110</td></tr>
+    <tr><td>YA</td><td class="num">-145</td><td class="num">-135</td><td class="num">-175</td><td class="num">-120</td><td class="num">-95</td><td class="num">-95</td><td class="num">-125</td><td class="num">-110</td></tr>
+  </table></div>
+  <p class="note"><b>v1.32보다 오히려 더 붙는 쌍</b>: Cambria 8쌍(AY LT LV LY RT RY TA YA) · DIN 5쌍(LY RT RV RW RY) · Rotis·Avenir 4쌍(RT RV RW RY) · Calibri 1쌍(LY) · Segoe UI 0쌍. 평균은 모두 v1.32보다 여유 있지만 쌍마다는 다릅니다.</p>
+  <p class="note">음수가 클수록 붙습니다. 18쌍 이외의 간격과 글자 모양은 그대로입니다. 로고 이름에는 이 쌍들이 없어 로고는 바뀌지 않습니다.</p>
+</div>
+</body>
+</html>

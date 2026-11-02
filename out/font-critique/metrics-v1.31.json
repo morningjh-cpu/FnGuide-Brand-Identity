@@ -1,0 +1,668 @@
+{
+ "prop": {
+  "FnGuide v1.31": {
+   "xh_cap": 0.714,
+   "asc_cap": 0.996,
+   "desc_cap": 0.3,
+   "O_over_top": 15.714,
+   "O_over_bot": 17.143,
+   "o_over_top": 17.143,
+   "o_over_bot": 17.143,
+   "stemH": 185.0,
+   "n_vs_H": 0.931,
+   "contrast_H": 0.502,
+   "contrast_O": 0.456,
+   "contrast_o": 0.368,
+   "O_H": 0.974
+  },
+  "FnGuide v1.200": {
+   "xh_cap": 0.691,
+   "asc_cap": 0.996,
+   "desc_cap": 0.3,
+   "O_over_top": 15.714,
+   "O_over_bot": 17.143,
+   "o_over_top": 20.0,
+   "o_over_bot": 17.143,
+   "stemH": 185.0,
+   "n_vs_H": 0.931,
+   "contrast_H": 0.502,
+   "contrast_O": 0.456,
+   "contrast_o": 0.36,
+   "O_H": 0.974
+  },
+  "Rotis Semi Sans Bold": {
+   "xh_cap": 0.69,
+   "asc_cap": 1.0,
+   "desc_cap": 0.31,
+   "O_over_top": 15.942,
+   "O_over_bot": 15.942,
+   "o_over_top": 15.942,
+   "o_over_bot": 15.942,
+   "stemH": 160.145,
+   "n_vs_H": 0.919,
+   "contrast_H": 0.597,
+   "contrast_O": 0.511,
+   "contrast_o": 0.38,
+   "O_H": 1.0
+  },
+  "Helvetica Neue Medium": {
+   "xh_cap": 0.724,
+   "asc_cap": 1.0,
+   "desc_cap": 0.268,
+   "O_over_top": 23.81,
+   "O_over_bot": 23.81,
+   "o_over_top": 19.608,
+   "o_over_bot": 19.608,
+   "stemH": 175.77,
+   "n_vs_H": 0.912,
+   "contrast_H": 0.861,
+   "contrast_O": 0.813,
+   "contrast_o": 0.789,
+   "O_H": 1.053
+  },
+  "Avenir Next Demi": {
+   "xh_cap": 0.678,
+   "asc_cap": 1.068,
+   "desc_cap": 0.339,
+   "O_over_top": 25.424,
+   "O_over_bot": 25.424,
+   "o_over_top": 19.774,
+   "o_over_bot": 19.774,
+   "stemH": 178.672,
+   "n_vs_H": 0.953,
+   "contrast_H": 0.854,
+   "contrast_O": 0.81,
+   "contrast_o": 0.803,
+   "O_H": 1.149
+  },
+  "Inter Medium": {
+   "xh_cap": 0.741,
+   "asc_cap": 1.0,
+   "desc_cap": 0.281,
+   "O_over_top": 14.094,
+   "O_over_bot": 14.094,
+   "o_over_top": 10.738,
+   "o_over_bot": 15.436,
+   "stemH": 152.685,
+   "n_vs_H": 0.96,
+   "contrast_H": 0.862,
+   "contrast_O": 0.92,
+   "contrast_o": 0.833,
+   "O_H": 1.035
+  }
+ },
+ "heights": {
+  "FnGuide v1.31": {
+   "H": [
+    0,
+    700
+   ],
+   "O": [
+    -12,
+    711
+   ],
+   "C": [
+    -12,
+    711
+   ],
+   "G": [
+    -12,
+    711
+   ],
+   "S": [
+    -12,
+    715
+   ],
+   "n": [
+    0,
+    500
+   ],
+   "z": [
+    -1,
+    498
+   ],
+   "o": [
+    -12,
+    512
+   ],
+   "c": [
+    -11,
+    512
+   ],
+   "e": [
+    -11,
+    512
+   ],
+   "v": [
+    0,
+    500
+   ],
+   "w": [
+    0,
+    500
+   ],
+   "x": [
+    0,
+    500
+   ],
+   "y": [
+    -209,
+    500
+   ],
+   "l": [
+    -11,
+    697
+   ],
+   "1": [
+    0,
+    655
+   ],
+   "I": [
+    0,
+    701
+   ],
+   "0": [
+    -12,
+    655
+   ],
+   "4": [
+    -1,
+    644
+   ],
+   "7": [
+    0,
+    644
+   ],
+   "9": [
+    -12,
+    655
+   ]
+  },
+  "FnGuide v1.200": {
+   "H": [
+    0,
+    700
+   ],
+   "O": [
+    -12,
+    711
+   ],
+   "C": [
+    -12,
+    688
+   ],
+   "G": [
+    -12,
+    688
+   ],
+   "S": [
+    -12,
+    715
+   ],
+   "n": [
+    0,
+    500
+   ],
+   "z": [
+    -1,
+    498
+   ],
+   "o": [
+    -12,
+    498
+   ],
+   "c": [
+    -11,
+    498
+   ],
+   "e": [
+    -11,
+    498
+   ],
+   "v": [
+    0,
+    485
+   ],
+   "w": [
+    0,
+    485
+   ],
+   "x": [
+    0,
+    484
+   ],
+   "y": [
+    -209,
+    491
+   ],
+   "l": [
+    0,
+    697
+   ],
+   "1": [
+    0,
+    655
+   ],
+   "I": [
+    0,
+    701
+   ],
+   "0": [
+    -12,
+    655
+   ],
+   "4": [
+    -1,
+    644
+   ],
+   "7": [
+    0,
+    644
+   ],
+   "9": [
+    -12,
+    655
+   ]
+  }
+ },
+ "kern": {
+  "FnGuide v1.31": {
+   "ft": null,
+   "fj": null,
+   "ty": 0,
+   "rv": 0,
+   "fy": 20,
+   "ff": null,
+   "AV": -180,
+   "AY": -180,
+   "AW": -145,
+   "LT": -180,
+   "LV": -180,
+   "LY": -180,
+   "LW": -180,
+   "Ty": -180,
+   "To": -145,
+   "Te": -145,
+   "Ta": -160,
+   "Vo": -45,
+   "Va": -55,
+   "Yo": -105,
+   "PA": -125,
+   "FA": -100,
+   "VA": -135,
+   "AT": -160,
+   "H0": -25,
+   "HO": -55,
+   "T4": -90,
+   "7A": -85,
+   "L1": -40,
+   "Y4": -80,
+   "C4": -90,
+   "A7": -45
+  },
+  "FnGuide v1.200": {
+   "ft": 30,
+   "fj": 50,
+   "ty": 20,
+   "rv": 20,
+   "fy": 20,
+   "ff": null,
+   "AV": -180,
+   "AY": -180,
+   "AW": -145,
+   "LT": -180,
+   "LV": -180,
+   "LY": -180,
+   "LW": -180,
+   "Ty": -180,
+   "To": -145,
+   "Te": -145,
+   "Ta": -160,
+   "Vo": -45,
+   "Va": -55,
+   "Yo": -105,
+   "PA": -125,
+   "FA": -100,
+   "VA": -135,
+   "AT": -160,
+   "H0": 0,
+   "HO": -55,
+   "T4": 0,
+   "7A": 0,
+   "L1": 0,
+   "Y4": 0,
+   "C4": 0,
+   "A7": 0
+  },
+  "Helvetica Neue Medium": {
+   "ft": 0,
+   "fj": 0,
+   "ty": 0,
+   "rv": 0,
+   "fy": 0,
+   "ff": -18,
+   "AV": -61,
+   "AY": -73,
+   "AW": -25,
+   "LT": -90,
+   "LV": -90,
+   "LY": -109,
+   "LW": -54,
+   "Ty": -109,
+   "To": -109,
+   "Te": -109,
+   "Ta": -98,
+   "Vo": -54,
+   "Va": -54,
+   "Yo": -90,
+   "PA": -73,
+   "FA": -54,
+   "VA": -54,
+   "AT": -90,
+   "H0": 0,
+   "HO": 0,
+   "T4": 0,
+   "7A": 0,
+   "L1": 0,
+   "Y4": 0,
+   "C4": 0,
+   "A7": 0
+  },
+  "Inter Medium": {
+   "ft": -35,
+   "fj": 2,
+   "ty": 21,
+   "rv": 14,
+   "fy": 1,
+   "ff": -38,
+   "AV": -76,
+   "AY": -79,
+   "AW": -61,
+   "LT": -91,
+   "LV": -68,
+   "LY": -68,
+   "LW": -12,
+   "Ty": -69,
+   "To": -84,
+   "Te": -84,
+   "Ta": -78,
+   "Vo": -56,
+   "Va": -54,
+   "Yo": -88,
+   "PA": -74,
+   "FA": -87,
+   "VA": -76,
+   "AT": -86,
+   "H0": 0,
+   "HO": 0,
+   "T4": -65,
+   "7A": -104,
+   "L1": -44,
+   "Y4": -65,
+   "C4": 0,
+   "A7": 0
+  }
+ },
+ "files": {
+  "FnGuide v1.31": {
+   "glyphs": 129,
+   "cmap": 105,
+   "winAscent": 870,
+   "winDescent": 260,
+   "maxY": 863,
+   "fsSelection": "0x40",
+   "fsType": 8,
+   "weight": 400,
+   "vendor": "FNGD",
+   "typo": [
+    800,
+    -250,
+    0
+   ],
+   "hhea": [
+    800,
+    -250,
+    0
+   ],
+   "upm": 1000,
+   "fontRevision": 1.31,
+   "names": {
+    "0": "Copyright (c) 2026 FnGuide. All rights reserved.",
+    "1": "FnGuide Logotype",
+    "2": "Regular",
+    "3": "FnGuideLogotype-Regular;1.31",
+    "4": "FnGuide Logotype Regular",
+    "5": "Version 1.31",
+    "6": "FnGuideLogotype-Regular",
+    "10": "Logotype font based on the FnGuide logo (A-Z, a-z, 0-9, ASCII punctuation, financial symbols, tabular figures (tnum); internal use)."
+   },
+   "features": [
+    "kern",
+    "liga",
+    "tnum"
+   ],
+   "hinting": [],
+   "ttf_hinting": [],
+   "sizes": {
+    "otf": 22848,
+    "ttf": 26344,
+    "woff": 13472,
+    "woff2(계산)": 10208
+   },
+   "missing": "—…©®™°‰€•→←↑↓△▲▼",
+   "digits_adv": {
+    "0": 657,
+    "1": 474,
+    "2": 569,
+    "3": 555,
+    "4": 631,
+    "5": 589,
+    "6": 605,
+    "7": 553,
+    "8": 597,
+    "9": 609
+   }
+  },
+  "FnGuide v1.200": {
+   "glyphs": 109,
+   "cmap": 100,
+   "winAscent": 850,
+   "winDescent": 260,
+   "maxY": 863,
+   "fsSelection": "0x0",
+   "fsType": 8,
+   "weight": 400,
+   "vendor": "FNGD",
+   "typo": [
+    800,
+    -250,
+    0
+   ],
+   "hhea": [
+    800,
+    -250,
+    0
+   ],
+   "upm": 1000,
+   "fontRevision": 1.0,
+   "names": {
+    "0": "Copyright (c) 2026 FnGuide. All rights reserved.",
+    "1": "FnGuide Logotype",
+    "2": "Regular",
+    "3": "FnGuideLogotype-Regular;1.200",
+    "4": "FnGuide Logotype Regular",
+    "5": "Version 1.200",
+    "6": "FnGuideLogotype-Regular",
+    "10": "Logotype font based on the FnGuide logo (A-Z, a-z, 0-9, ASCII punctuation; includes draft glyphs; internal use)."
+   },
+   "features": [
+    "kern",
+    "liga"
+   ],
+   "hinting": [],
+   "ttf_hinting": [],
+   "sizes": {
+    "otf": 18768,
+    "ttf": 21788,
+    "woff": 11828,
+    "woff2(계산)": 9256
+   },
+   "missing": "₩·−±×—…©®™°‰€•→←↑↓△▲▼",
+   "digits_adv": {
+    "0": 657,
+    "1": 376,
+    "2": 569,
+    "3": 555,
+    "4": 631,
+    "5": 589,
+    "6": 605,
+    "7": 553,
+    "8": 597,
+    "9": 609
+   }
+  }
+ },
+ "korean": {
+  "FnGuide": {
+   "cap": 0.7,
+   "stemH": 0.1295
+  },
+  "Pretendard Regular": {
+   "cap": 0.707,
+   "hangul_h": 0.868,
+   "stemH": 0.0876,
+   "hangul_stem": 0.0769,
+   "size_to_cap": 1.01,
+   "stem_ratio_at_cap": 1.492
+  },
+  "Pretendard Medium": {
+   "cap": 0.707,
+   "hangul_h": 0.874,
+   "stemH": 0.1072,
+   "hangul_stem": 0.0925,
+   "size_to_cap": 1.01,
+   "stem_ratio_at_cap": 1.22
+  },
+  "Pretendard SemiBold": {
+   "cap": 0.707,
+   "hangul_h": 0.881,
+   "stemH": 0.1267,
+   "hangul_stem": 0.1091,
+   "size_to_cap": 1.01,
+   "stem_ratio_at_cap": 1.032
+  },
+  "Pretendard Bold": {
+   "cap": 0.707,
+   "hangul_h": 0.888,
+   "stemH": 0.1462,
+   "hangul_stem": 0.1257,
+   "size_to_cap": 1.01,
+   "stem_ratio_at_cap": 0.894
+  },
+  "Noto Sans KR Medium": {
+   "cap": 0.737,
+   "hangul_h": 0.903,
+   "stemH": 0.1165,
+   "hangul_stem": 0.1045,
+   "size_to_cap": 1.053,
+   "stem_ratio_at_cap": 1.17
+  },
+  "맑은 고딕 Bold": {
+   "cap": 0.719,
+   "hangul_h": 0.955,
+   "stemH": 0.1389,
+   "hangul_stem": 0.1208,
+   "size_to_cap": 1.027,
+   "stem_ratio_at_cap": 0.957
+  },
+  "맑은 고딕": {
+   "cap": 0.719,
+   "hangul_h": 0.942,
+   "stemH": 0.0784,
+   "hangul_stem": 0.073,
+   "size_to_cap": 1.027,
+   "stem_ratio_at_cap": 1.697
+  },
+  "Spoqa Han Sans Neo Medium": {
+   "cap": 0.736,
+   "hangul_h": 0.903,
+   "stemH": 0.1155,
+   "hangul_stem": 0.1035,
+   "size_to_cap": 1.051,
+   "stem_ratio_at_cap": 1.179
+  }
+ },
+ "lig": {
+  "soft": [
+   "s",
+   "o",
+   "f_t"
+  ],
+  "lift": [
+   "l",
+   "i",
+   "f_t"
+  ],
+  "fifty": [
+   "f_i",
+   "f_t",
+   "y"
+  ],
+  "fjord": [
+   "f_j",
+   "o",
+   "r",
+   "d"
+  ],
+  "office": [
+   "o",
+   "f_f_i",
+   "c",
+   "e"
+  ]
+ },
+ "gap": {
+  "soft": {
+   "FnGuide v1.31": "합자",
+   "FnGuide v1.200": 145.5
+  },
+  "lift": {
+   "FnGuide v1.31": "합자",
+   "FnGuide v1.200": 145.5
+  },
+  "ty": {
+   "FnGuide v1.31": 5.5,
+   "FnGuide v1.200": 25.5
+  },
+  "rv": {
+   "FnGuide v1.31": 6.5,
+   "FnGuide v1.200": 26.5
+  },
+  "LY": {
+   "FnGuide v1.31": 220.5,
+   "FnGuide v1.200": 220.5
+  },
+  "LV": {
+   "FnGuide v1.31": 187.5,
+   "FnGuide v1.200": 187.5
+  },
+  "AV": {
+   "FnGuide v1.31": 143.5,
+   "FnGuide v1.200": 143.5
+  },
+  "HO": {
+   "FnGuide v1.31": 87.5,
+   "FnGuide v1.200": 87.5
+  },
+  "H0": {
+   "FnGuide v1.31": 117.0,
+   "FnGuide v1.200": 142.0
+  }
+ },
+ "tnum": [
+  "one.tf",
+  "zero.tf",
+  "two.tf",
+  "four.tf"
+ ]
+}

@@ -5,10 +5,13 @@ from fontTools.pens.basePen import BasePen
 from matplotlib.path import Path
 from matplotlib.patches import PathPatch
 
-ROOT = "C:/Users/morning02/my-projects/brand-management/"
-UF = "C:/Users/morning02/AppData/Local/Microsoft/Windows/Fonts/"
+import os as _os
+ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(__file__), "..", "..")).replace("\\", "/") + "/"
+_HOME = _os.path.expanduser("~").replace("\\", "/")
+UF = _HOME + "/AppData/Local/Microsoft/Windows/Fonts/"
 SF = "C:/Windows/Fonts/"
 FONTS = {
+    "FnGuide v1.31": ROOT + "out/font-update/v1.31/fonts/FnGuideLogotype-Regular.otf",
     "FnGuide v1.200": ROOT + "out/font-update/v1.200/fonts/FnGuideLogotype-Regular.otf",
     "FnGuide (logo)": ROOT + "out/font-update/logo-font/FnGuideLogotype-Regular.otf",
     "Helvetica Neue Medium": UF + "HelveticaNeue-Medium.otf",
