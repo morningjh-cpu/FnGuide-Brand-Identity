@@ -2,3 +2,5 @@
 Thumbs.db
 _trash/
 *.tmp
+__pycache__/
+.taste-skill/
