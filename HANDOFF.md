@@ -1,6 +1,13 @@
 # HANDOFF — 이 파일은 clear 전에 항상 최신으로 덮어쓴다 (이 줄 포함)
 
 ## 현재 상태
+- **최신(2026-11-06, 회사 PC)**: 전용서체 **v1.33 공개** · 홈페이지 반영 완료(커밋·push 완료). 사이트·문서에 보이는 v1.33·3차 크리틱 날짜는 사용자 요청으로 2026.11.09. 기록 plan/phase-2/08~11
+  - v1.33 = 세로 줄기 축선 11자 + 3차 디자인 크리틱 ❶~❾ 전체 + 깃발 아래 꼭지점 하나로(17자). 만들기 py scripts/build_v13.py --v133(고칠 목록 scripts/font_critique/v133_edits.py), 확인 check_v133.py(예상 밖 변화 0·간격 규칙 변화 0·12,544쌍 닿음 0)
+  - 압축 out/FnGuideLogotype-v1.33.zip(otf·ttf·woff·woff2), 옛 zip 은 out/font-backup/. 로고타입 19종 다시 만듦(build_logotypes.py FONT=v1.33). 이전 사이트 서체·로고는 _trash/2026-11-06-v1.32-사이트/
+  - 사이트 불러오기 번호: style.css·서체·logos.js·font-data.js ?v=1.33, app.js ?v=1.32c(안 바뀜), symbols.js ?v=6
+  - 사이트 표현 원칙(사용자): "오류 수정"이 아니라 "조형 완성도 다듬기", 3차 크리틱 등급은 사이트에서만 "우선 다듬기·함께 다듬기". 보고서(out/font-critique/FnGuide-Logotype-v1.33-critique.html)는 자세히. 3차 크리틱에서 한글 짝·사내 전용/외부 공개는 언급 금지
+  - 공유 문서 out/FnGuide-Logotype-share.md·html v1.33
+  - 미리보기 기록: out/font-update/v1.33-preview/(axis.html·critique3.html). HTML 은 크롬에 file:/// 전체 경로로 연다(상대 경로는 오류)
 - **최신(2026-11-02, 회사 PC)**: 전용서체 v1.32 공개 · 깃랩·깃허브 모두 a886eb8 까지 올라가 같음(깃허브에만 있던 문구 검수 3커밋은 합침)
 - **전용서체 v1.32 (2026-11-02)**: 2차 디자인 크리틱 반영. 기록 plan/phase-2/05(크리틱)·06(제작)·07(대각선 간격)
   - 바뀐 것: 수학 기호 높이 B안(가운데 대문자의 0.43)·가운뎃점·하이픈·대시·빗금·@ 높이, ₩ 왼쪽 위 세리프 제거, 보고서용 기호 8개(▲▼°‰…—™®), 대문자 대각선 18쌍 Avenir Next Demi 비율(대문자 평균 간격 기준 — Helvetica·Inter 안은 너무 촘촘해 사용자가 뺌, v1.33 은 만들었다가 v1.32 에 합침), 글꼴 포함 금지(fsType 2), 사용 조건 문구(한·영), woff2

@@ -1,0 +1,172 @@
+{
+ "changed_glyphs": [
+  "A",
+  "B",
+  "D",
+  "E",
+  "F",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "P",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "Y",
+  "Z",
+  "a",
+  "b",
+  "bracketleft",
+  "c",
+  "d",
+  "dollar",
+  "e",
+  "eight",
+  "eight.tf",
+  "f_b",
+  "four",
+  "four.tf",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "nine",
+  "nine.tf",
+  "o",
+  "one",
+  "one.tf",
+  "p",
+  "percent",
+  "q",
+  "question",
+  "r",
+  "s",
+  "six",
+  "six.tf",
+  "trademark",
+  "two",
+  "two.tf",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+  "zero.tf"
+ ],
+ "tiny_changed": [],
+ "unexpected_changed": [],
+ "expected_unchanged": [
+  "ampersand",
+  "perthousand"
+ ],
+ "width_changed": {
+  "I": [
+   347,
+   344
+  ],
+  "K": [
+   713,
+   706
+  ]
+ },
+ "sidebearing_changed": {
+  "L": [
+   [
+    26,
+    37
+   ],
+   [
+    26,
+    38
+   ]
+  ],
+  "Z": [
+   [
+    42,
+    44
+   ],
+   [
+    42,
+    46
+   ]
+  ],
+  "i": [
+   [
+    -1,
+    44
+   ],
+   [
+    -5,
+    44
+   ]
+  ],
+  "m": [
+   [
+    -1,
+    51
+   ],
+   [
+    -2,
+    51
+   ]
+  ],
+  "p": [
+   [
+    0,
+    32
+   ],
+   [
+    -6,
+    32
+   ]
+  ],
+  "q": [
+   [
+    32,
+    0
+   ],
+   [
+    32,
+    -7
+   ]
+  ],
+  "r": [
+   [
+    -1,
+    8
+   ],
+   [
+    0,
+    8
+   ]
+  ],
+  "u": [
+   [
+    0,
+    58
+   ],
+   [
+    -9,
+    58
+   ]
+  ]
+ },
+ "kern_changed": {},
+ "pairs_checked": 12544,
+ "touching": [],
+ "touching_also_in_v132": [],
+ "version": "Version 1.33",
+ "glyphs": 137
+}

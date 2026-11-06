@@ -11,6 +11,8 @@ _HOME = _os.path.expanduser("~").replace("\\", "/")
 UF = _HOME + "/AppData/Local/Microsoft/Windows/Fonts/"
 SF = "C:/Windows/Fonts/"
 FONTS = {
+    "FnGuide v1.33": ROOT + "out/font-update/v1.33/fonts/FnGuideLogotype-Regular.otf",
+    "FnGuide v1.32": ROOT + "out/font-update/v1.32/fonts/FnGuideLogotype-Regular.otf",
     "FnGuide v1.31": ROOT + "out/font-update/v1.31/fonts/FnGuideLogotype-Regular.otf",
     "FnGuide v1.200": ROOT + "out/font-update/v1.200/fonts/FnGuideLogotype-Regular.otf",
     "FnGuide (logo)": ROOT + "out/font-update/logo-font/FnGuideLogotype-Regular.otf",

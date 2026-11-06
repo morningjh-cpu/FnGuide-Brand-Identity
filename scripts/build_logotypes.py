@@ -26,7 +26,7 @@ from fontTools.ttLib import TTFont
 ROOT = Path(__file__).resolve().parent.parent
 FONT_DIR = ROOT / "data" / "FnGuide-Logotype-Font"
 # 로고타입은 최신 서체 v1.3 으로 만든다 (v1.200: out/font-update/v1.200, 기둥 조정 전 서체: out/font-update/logo-font)
-FONT = ROOT / "out" / "font-update" / "v1.32" / "fonts" / "FnGuideLogotype-Regular.otf"
+FONT = ROOT / "out" / "font-update" / "v1.33" / "fonts" / "FnGuideLogotype-Regular.otf"
 CI_SVG = FONT_DIR / "source-svg" / "0_logo" / "FnGuide.svg"
 FIGMA = ROOT / "data" / "figma-logo-parts"
 RETAMIN_SVG = FIGMA / "retamin.svg"

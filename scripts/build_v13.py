@@ -10,10 +10,12 @@ v1.200 서체(out/font-update/v1.200/fonts)의 글자·여백·커닝을 그대�
         대문자 대각선 18쌍 Avenir Next Demi 비율(대문자 평균 간격 기준, out/font-update/kern-diag-compare/compare-mean.json) ·
         포함 금지(fsType 2) · 사용 조건 문구 · woff2
         (대각선 18쌍은 처음 Inter 비율로 냈다가 너무 촘촘하다는 검토 의견으로 Avenir 로 바꿈. 별도 버전을 두지 않고 v1.32 에 포함 — plan/phase-2/07)
+      py scripts/build_v13.py --v133 : v1.32 + 세로 줄기 축선 맞춤(AXIS_FIX, 찾기는 font_critique/find_axis_misalign.py)
 """
 import os, sys, re
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "font_critique"))
 import pathops
+from fontTools.misc.roundTools import otRound
 from fontTools.ttLib import TTFont
 from fontTools.fontBuilder import FontBuilder
 from fontTools.pens.recordingPen import RecordingPen
@@ -28,9 +30,10 @@ ROOT = os.path.join(os.path.dirname(__file__), "..")
 SRC = os.path.join(ROOT, "out/font-update/v1.200/fonts/FnGuideLogotype-Regular.otf")
 FEA = os.path.join(ROOT, "out/font-update/work/kerning.fea")
 CONTROL = "--control" in sys.argv
-V132 = "--v132" in sys.argv
+V133 = "--v133" in sys.argv
+V132 = "--v132" in sys.argv or V133
 V131 = "--v131" in sys.argv or V132
-VERSION = "1.200" if CONTROL else ("1.32" if V132 else ("1.31" if V131 else "1.3"))
+VERSION = "1.200" if CONTROL else ("1.33" if V133 else "1.32" if V132 else ("1.31" if V131 else "1.3"))
 OUTDIR = os.path.join(ROOT, "out/font-update", "control" if CONTROL else "v" + VERSION, "fonts")
 FAMILY, STYLE, PS = "FnGuide Logotype", "Regular", "FnGuideLogotype-Regular"
 
@@ -50,6 +53,7 @@ def conv(ops, dx=0):
 
 glyphs = {g: (rec_src(g), hm[g][0]) for g in order}
 changed = set()
+AXIS_FIX = {}
 if not CONTROL:
     import after, symbols
     G = lambda ch: cmap[ord(ch)]
@@ -88,6 +92,25 @@ if not CONTROL:
         for ch, (a, path) in sn.build().items():
             nm, u = NEWNAME[ch]; r = RecordingPen(); path.draw(r)
             glyphs[nm] = (r.value, a); cmap[u] = nm
+    if V133:
+        # 세로 줄기 축선 맞춤 {글자: {옛 점: 새 점}} — plan/phase-2/08
+        # 어느 x 로 맞출지는 기둥 굵기 검토(plan/phase-1/08)의 굵기를 기준으로: 대문자 129, 소문자 120, m 123(가늘게 조정한 값)
+        X = lambda g, a, b, ys: {(a, y): (b, y) for y in ys}
+        AXIS_FIX = {
+            "F": X("F", 263, 261, (600, 620)),               # 132~261 = 129 (263 이면 131)
+            "E": X("E", 263, 261, (600, 620)),               # F 와 같음
+            "m": X("m", 217, 214, (396, 503)),               # 91~214 = 123 (217 이면 126)
+            "p": {**X("p", 204, 206, (-210, 52)), **X("p", 205, 206, (142, 212, 254, 308))},   # 87~206 = 119 (204 는 117, 205 는 118)
+            "b": X("b", 200, 201, (142, 212, 254, 308)),     # 82~201 = 119 (200 은 118)
+            "f_b": X("f_b", 548, 549, (142, 212, 254, 308)), # 429~549 = 120
+            "q": X("q", 373, 372, (-210, 52)),               # 372~491 = 119 (373 은 118)
+            "u": X("u", 410, 409, (0, 93)),                  # 409~529 = 120 (410 은 119)
+            "dollar": X("dollar", 343, 344, (678, 752)),     # 세로 막대 오른쪽 면 344 로 (기둥 아님, 긴 쪽에 맞춤)
+            "one": X("one", 306, 307, (75, 108, 133, 135)),  # 받침 곡선 시작을 기둥 오른쪽 면 307 에 (왼쪽 168 과 같은 방식)
+            "one.tf": X("one.tf", 369, 370, (75, 108, 133, 135)),
+        }
+        # 점 옮기기는 아래 contours() 에서 겹침 합치기 뒤에 한다(1 처럼 다시 그린 글자는 합친 뒤 좌표가 기준).
+        # 옮긴 글자를 changed 에 넣지 않음: 겹침 합치기(pathops)가 다른 곡선을 건드리지 않게
     added = [g for g in glyphs if g not in order]
     order += added; changed |= set(added)
 
@@ -99,6 +122,13 @@ def contours(g):
         for o, pts in ops: getattr(pen, o)(*pts)
         p.simplify(fix_winding=True)
         r = RecordingPen(); p.draw(r); ops = r.value
+    if g in AXIS_FIX:
+        mp, n, new_ops = AXIS_FIX[g], 0, []
+        for o, pts in ops:
+            pts = tuple((otRound(x), otRound(y)) for x, y in pts)     # 저장 때와 같은 반올림(1 은 원본이 306.5 같은 소수)
+            q = tuple(mp.get(pt, pt) for pt in pts)
+            n += sum(1 for x, y in zip(pts, q) if tuple(x) != y); new_ops.append((o, q))
+        assert n == len(mp), (g, n, len(mp)); ops = new_ops
     cs, cur = [], []
     for o, pts in ops:
         if o == "moveTo": cur = [(o, pts)]
@@ -136,6 +166,72 @@ def draw(cs, pen, ps_style, g):
         target.closePath()
 
 CS = {g: contours(g) for g in order}
+
+if V133:   # 3차 크리틱 전체 반영(font_critique/v133_edits.py) — 최종 서체와 같은 점 순서·방향으로 맞춘 뒤 고친다
+    import v133_edits as ED
+    from fontTools.pens.basePen import BasePen
+    class _Cubic(BasePen):      # 2차 곡선은 OTF 에 저장될 때처럼 3차 곡선으로 풀어 기록
+        def __init__(self): super().__init__(None); self.value = []
+        def _moveTo(self, p): self.value.append(("moveTo", (p,)))
+        def _lineTo(self, p): self.value.append(("lineTo", (p,)))
+        def _curveToOne(self, a, b, c): self.value.append(("curveTo", (a, b, c)))
+        def _closePath(self): self.value.append(("closePath", ()))
+    def ser(cs):
+        r = _Cubic(); g_ = ser.g; draw(cs, r, True, g_); out = []; last = None
+        for o, pts in r.value:
+            if o == "closePath": out.append("Z"); continue
+            rp = tuple((otRound(x), otRound(y)) for x, y in pts)
+            if o == "lineTo" and rp[-1] == last: continue        # 반올림 뒤 길이 0 인 선은 버림(저장 때도 사라짐)
+            last = rp[-1]
+            out.append({"moveTo": "M", "lineTo": "L", "curveTo": "C"}[o] + " ".join(f"{otRound(x)},{otRound(y)}" for x, y in pts))
+        return " ".join(out)
+    def parse(s):
+        cs, cur = [], None
+        for tok in s.replace(" Z", " Z|").split("|"):
+            tok = tok.strip()
+            if not tok: continue
+            items = []
+            for part in tok.split(" "):
+                if part[0] in "MLCZ": items.append([part[0], []]); part = part[1:]
+                if part: items[-1][1].append(tuple(int(v) for v in part.split(",")))
+            c = []
+            for o, pts in items:
+                if o == "M": c.append(("moveTo", (pts[0],)))
+                elif o == "L": c.append(("lineTo", tuple(pts)))
+                elif o == "C": c.append(("curveTo", tuple(pts)))
+            cs.append(c)
+        return cs
+    def collinear(cs):
+        out = []
+        for c in cs:
+            pts = [c[0][1][0]] + [p[-1] for o, p in c[1:]]; keep = [c[0]]
+            for i in range(1, len(c)):
+                o, p = c[i]
+                if o == "lineTo" and i + 1 < len(c) and c[i + 1][0] == "lineTo":
+                    (x0, y0), (x1, y1), (x2, y2) = pts[i - 1], p[0], c[i + 1][1][0]
+                    if (x1 - x0) * (y2 - y0) == (y1 - y0) * (x2 - x0): pts[i] = pts[i - 1]; continue
+                keep.append(c[i])
+            out.append(keep)
+        return out
+    EDITED = set()
+    for g in set(ED.SUB) | set(ED.SUB_OPTIONAL) | set(ED.SHIFT_Y) | ED.COLLINEAR | set(ED.SHIFT_X):
+        if g not in CS: continue
+        ser.g = g; s = ser(CS[g])
+        subs = (ED.SUB.get(g) or [(a, b) for a, b in ED.SUB_OPTIONAL.get(g, []) if a in s]) + ED.SUB2.get(g, [])
+        for a, b in subs:
+            assert s.count(a) == 1, (g, a, s)
+            s = s.replace(a, b)
+        cs = parse(s)
+        if g in ED.SHIFT_Y:
+            y0, dy = ED.SHIFT_Y[g]
+            cs = [[(o, tuple((x, y + dy) if y >= y0 else (x, y) for x, y in p)) for o, p in c] for c in cs]
+        if g in ED.COLLINEAR: cs = collinear(cs)
+        if g in ED.SHIFT_X:
+            dx = ED.SHIFT_X[g]
+            cs = [[(o, tuple((x + dx, y) for x, y in p)) for o, p in c] for c in cs]
+            glyphs[g] = (glyphs[g][0], glyphs[g][1] + dx)
+        CS[g] = cs; EDITED.add(g)
+    print("v1.33 윤곽 고침:", len(EDITED), "글자")
 
 # ---- 글자 쌍 간격·합자·선택 기능 ----
 fea = open(FEA, encoding="utf-8").read()
