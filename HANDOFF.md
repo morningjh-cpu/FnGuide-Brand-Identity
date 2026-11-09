@@ -1,6 +1,7 @@
 # HANDOFF — 이 파일은 clear 전에 항상 최신으로 덮어쓴다 (이 줄 포함)
 
 ## 현재 상태
+- **깃랩 MR 순서(2026-11-09)**: master → production 합치기 요청은 깃랩에서(production 은 깃랩에만 있음). 순서 plan/phase-2/12-깃랩-MR-순서.md. glab 은 설치했지만 회사 깃랩 토큰 화면이 404 라 로그인 못 함
 - **최신(2026-11-06, 회사 PC)**: 전용서체 **v1.33 공개** · 홈페이지 반영 · 커밋·push 완료 — 깃랩·깃허브 모두 c0440d2 까지 같음. 사이트·문서에 보이는 v1.33·3차 크리틱 날짜는 사용자 요청으로 **2026.11.09**(실제 작업일 11-06, plan 기록은 실제 날짜). 기록 plan/phase-2/08~11
   - 시작: 사용자가 F 줄기 오른쪽 선 위아래 x 차이(261/263) 발견(data/F 글자 조정.png) → 같은 경우 11자 축선 맞춤(기둥 굵기 검토 plan/phase-1/08 기준: 대문자 129·소문자 120·m 123). 찾기 도구 scripts/font_critique/find_axis_misalign.py
   - 3차 디자인 크리틱(폰트 디자이너·CI/BI 디자이너·프로덕트 디자이너, 미적·조형 완성도): 수정 필요 3·개선 권장 6·유지 5 → 사용자가 ❶~❾ 모두 반영 결정. 보고서 out/font-critique/FnGuide-Logotype-v1.33-critique.html(만들기 crit3_report.py, 그림 img/60~69 crit3_figs.py, 수치 metrics-v1.33.json crit3_measure.py)
