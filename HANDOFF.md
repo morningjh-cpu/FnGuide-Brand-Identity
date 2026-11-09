@@ -1,14 +1,18 @@
 # HANDOFF — 이 파일은 clear 전에 항상 최신으로 덮어쓴다 (이 줄 포함)
 
 ## 현재 상태
-- **최신(2026-11-06, 회사 PC)**: 전용서체 **v1.33 공개** · 홈페이지 반영 완료(커밋·push 완료). 사이트·문서에 보이는 v1.33·3차 크리틱 날짜는 사용자 요청으로 2026.11.09. 기록 plan/phase-2/08~11
-  - v1.33 = 세로 줄기 축선 11자 + 3차 디자인 크리틱 ❶~❾ 전체 + 깃발 아래 꼭지점 하나로(17자). 만들기 py scripts/build_v13.py --v133(고칠 목록 scripts/font_critique/v133_edits.py), 확인 check_v133.py(예상 밖 변화 0·간격 규칙 변화 0·12,544쌍 닿음 0)
-  - 압축 out/FnGuideLogotype-v1.33.zip(otf·ttf·woff·woff2), 옛 zip 은 out/font-backup/. 로고타입 19종 다시 만듦(build_logotypes.py FONT=v1.33). 이전 사이트 서체·로고는 _trash/2026-11-06-v1.32-사이트/
-  - 사이트 불러오기 번호: style.css·서체·logos.js·font-data.js ?v=1.33, app.js ?v=1.32c(안 바뀜), symbols.js ?v=6
-  - 사이트 표현 원칙(사용자): "오류 수정"이 아니라 "조형 완성도 다듬기", 3차 크리틱 등급은 사이트에서만 "우선 다듬기·함께 다듬기". 보고서(out/font-critique/FnGuide-Logotype-v1.33-critique.html)는 자세히. 3차 크리틱에서 한글 짝·사내 전용/외부 공개는 언급 금지
+- **최신(2026-11-06, 회사 PC)**: 전용서체 **v1.33 공개** · 홈페이지 반영 · 커밋·push 완료 — 깃랩·깃허브 모두 c0440d2 까지 같음. 사이트·문서에 보이는 v1.33·3차 크리틱 날짜는 사용자 요청으로 **2026.11.09**(실제 작업일 11-06, plan 기록은 실제 날짜). 기록 plan/phase-2/08~11
+  - 시작: 사용자가 F 줄기 오른쪽 선 위아래 x 차이(261/263) 발견(data/F 글자 조정.png) → 같은 경우 11자 축선 맞춤(기둥 굵기 검토 plan/phase-1/08 기준: 대문자 129·소문자 120·m 123). 찾기 도구 scripts/font_critique/find_axis_misalign.py
+  - 3차 디자인 크리틱(폰트 디자이너·CI/BI 디자이너·프로덕트 디자이너, 미적·조형 완성도): 수정 필요 3·개선 권장 6·유지 5 → 사용자가 ❶~❾ 모두 반영 결정. 보고서 out/font-critique/FnGuide-Logotype-v1.33-critique.html(만들기 crit3_report.py, 그림 img/60~69 crit3_figs.py, 수치 metrics-v1.33.json crit3_measure.py)
+  - 추가 요청 반영: 깃발 아래 "짧은 수평선+곡선" 꼭지점 2개 → 하나로(소문자 깃발 17자, data/h.png)
+  - v1.33 만들기 py scripts/build_v13.py --v133(축선 AXIS_FIX + 고칠 목록 scripts/font_critique/v133_edits.py 의 SUB·SUB2·SHIFT_Y·COLLINEAR·SHIFT_X). 확인 check_v133.py: 바뀐 글자 64·예상 밖 0·간격 규칙 변화 0·12,544쌍 닿음 0. I·K 폭 347→344·713→706(좌우 여백 유지)
+  - 압축 out/FnGuideLogotype-v1.33.zip(otf·ttf·woff·woff2), 옛 zip 은 out/font-backup/. 로고타입 19종 다시 만듦(build_logotypes.py FONT=v1.33, 개선 로고 FnGuide·회사 CI·리타민은 그대로). 이전 사이트 서체·로고는 _trash/2026-11-06-v1.32-사이트/
+  - 사이트: 폰트 업데이트 v1.33 단락(표 8줄·그림 v133-*.png, site_v133_figs.py)·버전 이력, 디자인 크리틱 3차 줄·단락, 다운로드 단추·홈·서체 소개 v1.33. 불러오기 번호 style.css·서체·logos.js·font-data.js ?v=1.33, app.js ?v=1.32c(안 바뀜), symbols.js ?v=6
+  - 사이트 표현 원칙(사용자): "오류 수정"이 아니라 "조형 완성도 다듬기", 3차 크리틱 등급은 사이트에서만 "우선 다듬기·함께 다듬기"(보고서는 원래 등급으로 자세히). 전문가 이름에 "(경력 20년 이상)" 쓰지 않음(사이트·보고서 모두 뺌). 3차 크리틱에서 한글 짝·사내 전용/외부 공개는 언급 금지
   - 공유 문서 out/FnGuide-Logotype-share.md·html v1.33
-  - 미리보기 기록: out/font-update/v1.33-preview/(axis.html·critique3.html). HTML 은 크롬에 file:/// 전체 경로로 연다(상대 경로는 오류)
-- **최신(2026-11-02, 회사 PC)**: 전용서체 v1.32 공개 · 깃랩·깃허브 모두 a886eb8 까지 올라가 같음(깃허브에만 있던 문구 검수 3커밋은 합침)
+  - 미리보기 기록: out/font-update/v1.33-preview/(axis.html 축선·critique3.html 전체 전후). HTML 은 크롬에 file:/// 전체 경로로 연다(상대 경로는 "사이트에 연결할 수 없음" 오류)
+  - 그대로 둔 것(이번 범위 밖): G 아래 모서리, R X Z x z K l t 사선 끝 깎인 모서리, 5 의 짧은 사선, & 몸통의 직선 조각, 숫자·괄호·@·~ 의 작은 꺾임
+- **(이전) 2026-11-02, 회사 PC**: 전용서체 v1.32 공개 · 깃랩·깃허브 모두 a886eb8 까지 올라가 같음(깃허브에만 있던 문구 검수 3커밋은 합침)
 - **전용서체 v1.32 (2026-11-02)**: 2차 디자인 크리틱 반영. 기록 plan/phase-2/05(크리틱)·06(제작)·07(대각선 간격)
   - 바뀐 것: 수학 기호 높이 B안(가운데 대문자의 0.43)·가운뎃점·하이픈·대시·빗금·@ 높이, ₩ 왼쪽 위 세리프 제거, 보고서용 기호 8개(▲▼°‰…—™®), 대문자 대각선 18쌍 Avenir Next Demi 비율(대문자 평균 간격 기준 — Helvetica·Inter 안은 너무 촘촘해 사용자가 뺌, v1.33 은 만들었다가 v1.32 에 합침), 글꼴 포함 금지(fsType 2), 사용 조건 문구(한·영), woff2
   - 만들기 py scripts/build_v13.py --v132 → out/font-update/v1.32/fonts(+features.fea), 확인 py scripts/font_critique/check_v132.py(바뀐 글자 18·새 글자 8, 간격 바뀐 쌍은 대각선 18쌍뿐, 12,544쌍 닿음 0), 로고 23종 변화 없음
@@ -23,7 +27,7 @@
   - 디자인 크리틱 화면 제목 "Design Critique"(Critic 은 사람). 화면 맨 위 "전문가 의견은 AI가…" 문장 삭제(1·2차 단락 아래 안내 2곳은 남아 있음)
   - 사이트 글 AI 티 검사: 연결어미 뒤 쉼표 13곳 삭제
 - **디자이너 확인 항목 모두 완료(2026-11-02, 사용자)**: 로고 17종, f 이어 쓰기 8종, 1·l·₩·× 등 시안, data/FnGuide-Logotype-Font/README 검토 항목까지 전부 ✔. "디자이너 확인 필요/아직"을 다시 언급하지 말 것
-- **커밋하지 않고 둔 파일**(이번 작업과 무관, 원래 있던 것): .taste-skill/, data/개선.jpg, data/사본 -클립보드 이미지.jpg, out/사내공지-브랜드사이트-소개.md, plan/스킬 설치 목록
+- 커밋하지 않고 둔 파일: 없음(2026-11-06 기준 작업 폴더 깨끗함). .taste-skill/ 은 다시 만들 수 있는 캡처라 .gitignore
 - **사이트 문구 AI 티 다듬기(2026-10-31)**: 화면 문구 279곳 점검, 이어지는 말 뒤 쉼표 10곳만 뺌(index.html 9·app.js 1, 나머지 그대로). app.js 불러오기 ?v=5. 바꾸기 전 원본 _trash/2026-10-31-문구윤문전/
 - **정식 사이트 교체(2026-10-30)**: 스킬 적용 리뉴얼판을 index.html 로 정함(사용자 결정). 모양·동작은 Apply skills Ver/(style.css·app.js), 서체·로고는 out/brand-site/ 그대로. 이전 사이트는 index_old.html(꼬리의 "이전 버전 보기" 링크). 화면 구조·주소(#font/update 등)는 이전과 같아서 아래의 "index.html 의 page-update 에 단락 추가" 같은 안내는 새 index.html 에 그대로 적용, 단 그룹 정보·받기 동작은 이제 Apply skills Ver/app.js 에 있음. 받기 13종 자동 확인, 전체 ZIP 은 이전과 크기 같음. 기록 plan/phase-2/01~04
   - 위쪽 바 오른쪽 단추 = "서체 다운로드 v1.32"(out/FnGuideLogotype-v1.32.zip, 2026-10-30 사용자 요청으로 로고 전체 받기 대신). 서체가 업데이트되면 index.html 의 이 단추 파일 이름·버전 글자도 바꿀 것
@@ -73,6 +77,7 @@
 - 회사 CI 전용색상 표의 Pantone·CMYK 값은 홈페이지 값 그대로(검증 안 됨)
 
 ## 다음 할 일
+- v1.33 이후 열린 것 없음. 서체를 또 고치면 build_v13.py 에 --v134 처럼 옵션을 더하고(앞 버전 위에 바꿀 것만), 공개 순서는 plan/phase-2/11 그대로(zip·font-backup → brand-site/fonts → build_logotypes.py → index.html ?v= · 폰트 업데이트·크리틱 화면 · 공유 문서)
 - 사용자 결정 대기(2026-11-02): 서체 사용 범위(로고·제목 / 표·보고서까지) · 사용 규칙에 최소 크기(16px) · 버전 확인 안내(받는 곳 한 군데) · 로고 전환 순서(서비스 웹사이트 로고·파비콘·OG 교체) · 사이트 글꼴·웹 예시 코드 대체 서체 serif → Pretendard · 크리틱 단락 아래 AI 안내 2곳 삭제 여부
 - 전역 지시문 원본(~/.claude/skills/공통설정/CLAUDE.md)에 "미리보기는 링크 + 크롬 바로 띄우기(Windows PowerShell Start-Process chrome)" 넣을지 제안함(사용자 답 없음)
 - 열린 제안(사용자 결정 안 됨): 오픈 그래프 문구가 가로선보다 넓을 때 선 폭 안에서 줄 바꿀지 / 문구가 크고 3줄 이상이면 아래로 잘릴 수 있음 / 다운로드 표 순서를 디자인 아티클처럼(개선 로고 먼저) / 깃랩 기본 README 를 프로젝트 소개로 / 깃허브 Pages 끄고 깃랩 Pages
@@ -82,7 +87,7 @@
 - 전용서체 v1.200 완성(새 글자 f m M s S y r 반영 + I 기둥 -4% 시안 A 반영 + f 이어 쓰기 8종 다시 만듦): out/font-update/v1.200/ (fonts, preview, 만든 과정). 기록: plan/phase-1/07
 - r 까지 사이트 반영 완료(plan/phase-1/09 추가분). 불러오기 주소 ?v=1.200r
 - f·m·r 기둥 0.15(≈4%) 가늘게 조정 완료(plan/phase-1/08 추가분). 사이트 다운로드 파일·업데이트 글·규칙 수(1,203)·로고타입 모두 반영(plan/phase-1/09·10)
-- 공유 문서(전용서체 결과 공유) = out/FnGuide-Logotype-share.md · .html (v1.31). 서체·사이트가 바뀌면 이 문서도 함께 갱신(사용자 요청). data/ 의 v1.0 copy.md 는 받은 원본 그대로
+- 공유 문서(전용서체 결과 공유) = out/FnGuide-Logotype-share.md · .html (v1.33). 서체·사이트가 바뀌면 이 문서도 함께 갱신(사용자 요청). data/ 의 v1.0 copy.md 는 받은 원본 그대로
 - 결정 대기 4건 정리 완료(plan/phase-1/10): 로고타입 조정본으로 다시 만듦, data/FnGuide-Logotype-Font 의 fonts·spacing 을 v1.200 으로 교체(source-svg 는 8_v1.200/ 추가; README·proof·preview·build 는 아직 v1.100 기준으로 섞여 있음; 옛 파일 _trash/data-font-v1.100/)
 - f 이어 쓰기 8종 확인: ✔ 디자이너 확인 완료(2026-11-02) (보낸 글 out/font-update/f-이어쓰기-디자이너확인요청.md)
 - 서체를 또 고치면(v1.3 부터): scripts/build_v13.py 처럼 앞 버전 서체를 읽어 바꿀 글자만 바꿔 새 버전 폴더에 만들기 → zip·옛 zip 은 font-backup → out/brand-site/fonts 복사 → py scripts/build_logotypes.py(또는 --font-data) → index.html 의 ?v= 숫자 올리기(서체·logos.js·font-data.js)
