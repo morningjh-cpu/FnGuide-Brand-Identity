@@ -22,8 +22,9 @@ KEEP = {
     "retamin": ("retamin/retamin-icon-navy.svg", "img/retamin-app-icon", "Report의 R — 네모·세모·원"),
     "dataguide": ("dataguide/figma/dataguide-icon-256.svg", "Icon-set", "D·G와 ∞ — 무한한 데이터 흐름"),
     "cryptoguide": ("cryptoguide/cryptoguide-icon-512.svg", "CryptoGuide", "Crypto·Guide 이니셜의 큐브"),
-    # 일러스트레이터 내보내기(사용자 디자인 2026-10-30): 그룹 id 대신 None — 파일 전체를 쓴다
-    "wisereport": ("wisereport/WR-White-modify.svg", None, "Wise·Report 이니셜 W·R"),
+    # 피그마 내보내기 수정본(사용자 디자인 2026-11-13 12:12, WR-icon-new2.svg — 앞선 WR-icon.svg·WR-icon-new.svg 대신): 그룹 id 대신 "" — 파일 전체를 쓴다
+    # (옛 일러스트레이터본 wisereport/WR-White-modify.svg 는 None 으로 쓰던 것)
+    "wisereport": ("WR-icon-new2.svg", "", "Wise·Report 이니셜 W·R"),
 }
 
 # 바탕색 바꾸기 (원본 파일은 그대로 두고 사이트용만): DataGuide 는 피그마 #BF2645 대신 FnRed 2025 (사용자 요청 2026-10-29)
@@ -66,10 +67,12 @@ def clean(path, keep_id):
     if keep_id is None:
         return illustrator(root)
     w, h = root.get("width"), root.get("height")
-    group = next(e for e in root.iter() if e.get("id") == keep_id)
     defs = [e for e in root if e.tag == f"{{{NS}}}defs"]
     out = ET.Element(f"{{{NS}}}svg", {"width": w, "height": h, "viewBox": f"0 0 {w} {h}", "fill": "none"})
-    out.append(group)
+    if keep_id == "":  # 아이콘만 내보낸 파일 — defs 밖의 내용을 모두 쓴다
+        out.extend(e for e in root if e.tag != f"{{{NS}}}defs")
+    else:
+        out.append(next(e for e in root.iter() if e.get("id") == keep_id))
     out.extend(defs)
     for e in out.iter():  # 피그마 레이어 이름(id)은 필요 없음 — 그러데이션 id 만 남김
         if e.get("id") and not e.tag.endswith("linearGradient") and not e.tag.endswith("clipPath") and not e.tag.endswith("mask"):

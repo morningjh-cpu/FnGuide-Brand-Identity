@@ -8,7 +8,7 @@
   - 추가 요청 반영: 깃발 아래 "짧은 수평선+곡선" 꼭지점 2개 → 하나로(소문자 깃발 17자, data/h.png)
   - v1.33 만들기 py scripts/build_v13.py --v133(축선 AXIS_FIX + 고칠 목록 scripts/font_critique/v133_edits.py 의 SUB·SUB2·SHIFT_Y·COLLINEAR·SHIFT_X). 확인 check_v133.py: 바뀐 글자 64·예상 밖 0·간격 규칙 변화 0·12,544쌍 닿음 0. I·K 폭 347→344·713→706(좌우 여백 유지)
   - 압축 out/FnGuideLogotype-v1.33.zip(otf·ttf·woff·woff2), 옛 zip 은 out/font-backup/. 로고타입 19종 다시 만듦(build_logotypes.py FONT=v1.33, 개선 로고 FnGuide·회사 CI·리타민은 그대로). 이전 사이트 서체·로고는 _trash/2026-11-06-v1.32-사이트/
-  - 사이트: 폰트 업데이트 v1.33 단락(표 8줄·그림 v133-*.png, site_v133_figs.py)·버전 이력, 디자인 크리틱 3차 줄·단락, 다운로드 단추·홈·서체 소개 v1.33. 불러오기 번호 style.css·서체·logos.js·font-data.js ?v=1.33, app.js ?v=1.32c(안 바뀜), symbols.js ?v=6
+  - 사이트: 폰트 업데이트 v1.33 단락(표 8줄·그림 v133-*.png, site_v133_figs.py)·버전 이력, 디자인 크리틱 3차 줄·단락, 다운로드 단추·홈·서체 소개 v1.33. 불러오기 번호 style.css·서체·logos.js·font-data.js ?v=1.33, app.js ?v=1.33b(채널톡 문구·PNG-180px 단추 없앰), symbols.js ?v=9
   - 사이트 표현 원칙(사용자): "오류 수정"이 아니라 "조형 완성도 다듬기", 3차 크리틱 등급은 사이트에서만 "우선 다듬기·함께 다듬기"(보고서는 원래 등급으로 자세히). 전문가 이름에 "(경력 20년 이상)" 쓰지 않음(사이트·보고서 모두 뺌). 3차 크리틱에서 한글 짝·사내 전용/외부 공개는 언급 금지
   - 공유 문서 out/FnGuide-Logotype-share.md·html v1.33
   - 미리보기 기록: out/font-update/v1.33-preview/(axis.html 축선·critique3.html 전체 전후). HTML 은 크롬에 file:/// 전체 경로로 연다(상대 경로는 "사이트에 연결할 수 없음" 오류)
@@ -18,7 +18,7 @@
   - 바뀐 것: 수학 기호 높이 B안(가운데 대문자의 0.43)·가운뎃점·하이픈·대시·빗금·@ 높이, ₩ 왼쪽 위 세리프 제거, 보고서용 기호 8개(▲▼°‰…—™®), 대문자 대각선 18쌍 Avenir Next Demi 비율(대문자 평균 간격 기준 — Helvetica·Inter 안은 너무 촘촘해 사용자가 뺌, v1.33 은 만들었다가 v1.32 에 합침), 글꼴 포함 금지(fsType 2), 사용 조건 문구(한·영), woff2
   - 만들기 py scripts/build_v13.py --v132 → out/font-update/v1.32/fonts(+features.fea), 확인 py scripts/font_critique/check_v132.py(바뀐 글자 18·새 글자 8, 간격 바뀐 쌍은 대각선 18쌍뿐, 12,544쌍 닿음 0), 로고 23종 변화 없음
   - 압축 out/FnGuideLogotype-v1.32.zip(otf·ttf·woff·woff2), 옛 zip 은 out/font-backup/. 처음 낸 Inter 판 v1.32·v1.33 파일은 _trash/2026-11-02-v1.33-합침/
-  - 사이트 불러오기 번호: style.css·logos.js·font-data.js·서체 ?v=1.32b, app.js ?v=1.32c, symbols.js ?v=6. 서체를 또 고치면 build_v13.py 에 옵션을 더하는 방식(앞 버전 서체 읽어 바꿀 것만 바꿈)
+  - 사이트 불러오기 번호: style.css·logos.js·font-data.js·서체 ?v=1.32b, app.js ?v=1.32c, symbols.js ?v=9. 서체를 또 고치면 build_v13.py 에 옵션을 더하는 방식(앞 버전 서체 읽어 바꿀 것만 바꿈)
   - 공유 문서 out/FnGuide-Logotype-share.md·html v1.32
 - **2차 디자인 크리틱(v1.31, 2026-11-02)**: 타이포·CI/BI·PM급 브랜드 디자이너 + 사용자 의견(기호가 낮음). 보고서 out/font-critique/FnGuide-Logotype-v1.31-critique.html(그림 img/50~55), 사이트 크리틱 화면 2차 단락(반영 칸 "v1.32에 반영")
   - 미리보기 기록: out/font-update/v1.32-preview/preview.html(기호·₩·대각선·새 기호), out/font-update/kern-diag-compare/preview.html(해외 15종 대각선 비교), out/font-critique/korean-pair/preview.html(명조 비교)
@@ -39,11 +39,11 @@
 - 왼쪽 메뉴: 마우스를 올리면 글자색 #B9023D(위쪽 메뉴 회사소개와 같은 색), 선택된 1단계 메뉴는 배경 없이 글자색 #B9023D + 굵게 + 밑줄(글자와 1px 띄움, offset 2px), 선택된 하위 메뉴는 옅은 배경 + 글자색 #B9023D + 굵게
 - **디자인 아티클(#article, 2026-10-29)**: 서비스를 고르면 브라우저에서 바로 만들고 받기. 기록 plan/phase-1/17
   - 아이콘: 심볼 · 이니셜 Fn 선택(심볼 있으면 기본 심볼). 받기 favicon.ico(16·32·48) · icon.ico(16~256) · SVG · PNG-512px. Fn 간격은 피그마 원본처럼 좁게
-  - 애플 터치 아이콘: 심볼 · 이니셜 선택(심볼 있으면 기본 심볼), 이니셜 글자·크기(50~150%) 조절, 그림자 유지. 받기 PNG-180px · 기기별 PNG ZIP(touch-icon.zip: 180·167·152·120). 아래에 "채널톡 아이콘 사이즈와 동일합니다."
+  - 애플 터치 아이콘: 심볼 · 이니셜 선택(심볼 있으면 기본 심볼), 이니셜 글자·크기(50~150%) 조절, 그림자 유지. 받기 기기별 PNG ZIP만(PNG-180px 단추·채널톡 문구는 2026-11-13 없앰)
   - 오픈 그래프(1200×630): 사업 색 바탕 + 흰 로고 + 가로선(가운데 흰색→양 끝 흐림, 폭 932) + 소개 문구. 시안 data/Symbol/오픈그래프-WiseReport.svg. 문구 Pretendard 600 기본 50px(28~72 조절)·줄간격 148%·폭 1040 넘으면 줄 바꿈. 로고·가로선은 글자 크기와 상관없이 같은 자리(50px 한 줄 기준 가운데), 문구는 아래로 늘어남. 서비스별 기본 문구는 OG_TEXT·OG_GROUP, 없으면 Your Best Financial Guide
   - 서비스를 바꾸면 문구 크기·애플 아이콘 이니셜·크기가 기본값으로 돌아감
   - 한 번에 받기 ZIP <id>-web-icons/ 15개(icon.ico 는 넣지 않음 — 사용자 결정)
-  - 심볼 4종(Retamin·DataGuide·CryptoGuide·WiseReport)은 data/Symbol → py scripts/build_symbols.py → out/brand-site/symbols.js(불러오기 ?v=6). WiseReport 는 사용자가 디자인한 일러스트레이터 파일(data/Symbol/wisereport/WR-White-modify.svg, 2026-10-30 11:26 수정본) — 도구가 클래스 색·한글 그러데이션 이름을 정리해 넣음. DataGuide 바탕은 FnRed #B9023D(피그마 #BF2645 대신, 결정 완료). 오픈 그래프 바탕도 시안의 #BF2645 대신 사이트 색
+  - 심볼 4종(Retamin·DataGuide·CryptoGuide·WiseReport)은 data/Symbol → py scripts/build_symbols.py → out/brand-site/symbols.js(불러오기 ?v=9). WiseReport 는 사용자 수정본 data/Symbol/WR-icon-new2.svg(피그마 내보내기, 2026-11-13 12:12 반영 — W 획 하나를 그림자 위로 올린 판. 앞 수정본 WR-icon.svg·WR-icon-new.svg 도 보관. 옛 일러스트레이터본 wisereport/WR-White-modify.svg 는 보관). DataGuide 바탕은 FnRed #B9023D(피그마 #BF2645 대신, 결정 완료). 오픈 그래프 바탕도 시안의 #BF2645 대신 사이트 색
 - 사이트 파비콘(2026-10-29): FnGuide 개선 로고 Fn 아이콘(FnRed), out/brand-site/favicon/. 내 컴퓨터 파일로 열면 크롬이 탭 아이콘을 안 보여 줌(웹 주소로 열 때만 보임, 확인 완료)
 - 깃: origin = 깃허브(비공개) https://github.com/morningjh-cpu/FnGuide-Brand-Identity.git (2026-11-05 FnGudie-BI-Manager 에서 이름 변경. 폴더 이름은 그대로). **집 PC·노트북은 다음 시작 때 `git remote set-url origin https://github.com/morningjh-cpu/FnGuide-Brand-Identity.git` 필요(아직 안 함)**. gitlab = 사내 깃랩 igit.fnguide.com/design/brand-design-management. gitlab 연결은 **회사 PC에만** 있음(사내망 전용) — 회사 PC에선 `! git push` 한 번에 둘 다, 집 PC·노트북은 깃허브에만 올라감(정상). 깃허브 무료 계정의 Pages 는 저장소가 비공개여도 공개라 사내 서체가 드러날 수 있음 — 깃랩 Pages(사내 회원만) 검토 제안했고 결정 안 됨
 - 로고타입 다운로드 맨 아래 "전체 로고타입 받기 (ZIP)" 버튼(2026-10-29): 표의 로고 23종 × 컬러·흰색 × SVG·PNG(4배) = 90개 파일을 브라우저에서 바로 묶음(외부 라이브러리 없음, 개별 받기와 같은 여백·크기). 크롬에서 눌러 ZIP 정상 확인

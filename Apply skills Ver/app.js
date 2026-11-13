@@ -557,7 +557,6 @@
   }
   pairInputs($("#ogSize"), $("#ogSizeNum"), 28, 72, 50, v => { art.ogSize = v; renderArt(); });
   pairInputs($("#appleSize"), $("#appleSizeNum"), 50, 150, 100, v => { apple.size = v; renderArt(); });
-  $("#appleDl").addEventListener("click", async () => save(await iconPng(appleSvg(), 180), `${art.l.id}-apple-touch-icon.png`)); // 채널톡 아이콘과 같은 180px
   // 터치 아이콘 ZIP: 한 파일 안에서 아이폰·안드로이드 폴더를 나눔
   //   iphone/  180 아이폰 · 167 아이패드 프로 · 152 아이패드 · 120 옛 아이폰
   //   android/ 192 · 512 (같은 그림을 정사각형으로, 모양은 기기가 원형 등으로 깎음)
