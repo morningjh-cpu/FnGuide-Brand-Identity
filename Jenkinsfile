@@ -40,6 +40,7 @@ pipeline {
 set +x
 set -euo pipefail
 docker build \
+    --pull \
     --build-arg BUILD_VERSION="$BUILD_VER" \
     --build-arg DEPLOY_ENV="$DEPLOY_ENV" \
     --build-arg GIT_COMMIT="$GIT_COMMIT" \
